@@ -1,0 +1,218 @@
+{
+  "basic-nail-art": {
+    "title": "Natural Nails",
+    "description": "Verified natural-nail studio work with detailed finishes on the client’s own nails.",
+    "examples": [
+      {
+        "name": "Night Prince Relics",
+        "image": "assets/gallery/portfolio/midnight-relics.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/midnight-relics.webp",
+        "alt": "Short natural nails in smoky black and steel blue with raised silver crosses, medallions, and gothic linework."
+      }
+    ]
+  },
+  "gel-x-extensions": {
+    "title": "Gel X Extensions",
+    "description": "Verified Gel-X studio sets sorted from short to medium and long so you can compare length, shape, and art.",
+    "examples": [
+      {
+        "name": "Short · Coquette Pink Bows",
+        "image": "assets/gallery/portfolio/lavender-butterfly-glaze.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/lavender-butterfly-glaze.webp",
+        "alt": "Short almond Gel-X nails with pink-lilac pearl glaze, fine gold edging, and delicate gold bow outlines."
+      },
+      {
+        "name": "Short · 500 Days of Summer",
+        "image": "assets/gallery/portfolio/polka-dot-garden.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/polka-dot-garden.webp",
+        "alt": "Short Gel-X nails with white-and-black polka dots, sheer blush accents, sculpted white flowers, and gold centers."
+      },
+      {
+        "name": "Short · Lavender Dream",
+        "image": "assets/gallery/portfolio/lilac-gilded-florals.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/lilac-gilded-florals.webp",
+        "alt": "Short Gel-X oval nails with lavender ombré tips, fine gold curves, and delicate white floral linework."
+      },
+      {
+        "name": "Medium · Monochrome Butterfly Chrome",
+        "image": "assets/gallery/portfolio/monochrome-butterfly-chrome.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/monochrome-butterfly-chrome.webp",
+        "alt": "Medium almond Gel-X nails with translucent ivory polish, black chrome outlines, silver studs, and monochrome butterfly art."
+      },
+      {
+        "name": "Medium · Celestial Ice",
+        "image": "assets/gallery/portfolio/silver-celestial-cat-eye.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/silver-celestial-cat-eye.webp",
+        "alt": "Medium almond Gel-X nails in icy steel-blue cat-eye polish with silver celestial linework, pearls, and crystal accents."
+      },
+      {
+        "name": "Medium · Dubai Pink",
+        "image": "assets/gallery/portfolio/gold-lined-pink-geode.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/gold-lined-pink-geode.webp",
+        "alt": "Medium square Gel-X nails with blush and mauve color blocking, irregular gold chrome borders, and gold bead accents."
+      },
+      {
+        "name": "Medium · Wizard of Oz Emerald",
+        "image": "assets/gallery/portfolio/emerald-celestial-cat-eye.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/emerald-celestial-cat-eye.webp",
+        "alt": "Medium almond Gel-X nails with emerald cat-eye polish, nude diagonal French tips, gold celestial stars, and tiny studs."
+      },
+      {
+        "name": "Medium–Long · Orchid Princess",
+        "image": "assets/gallery/portfolio/celestial-white-florals.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/celestial-white-florals.webp",
+        "alt": "Medium-long almond Gel-X nails with pearl-white shimmer, sculpted orchid petals, crystals, and silver accents."
+      },
+      {
+        "name": "Long · Killer Fairy Crystal",
+        "image": "assets/gallery/portfolio/killer-fairy-crystal.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/killer-fairy-crystal.webp",
+        "alt": "Long pearl-chrome Gel-X stiletto nails with white fairy-wing petals, crystal bows, and rhinestone clusters."
+      },
+      {
+        "name": "Long · Citrus Circus",
+        "image": "assets/gallery/portfolio/citrus-circus.jpg",
+        "thumbnail": "assets/gallery/portfolio/thumbs/citrus-circus.jpg",
+        "alt": "Long pink Gel-X stiletto nails with citrus slices, white blossoms, pink dots, and dimensional floral accents."
+      },
+      {
+        "name": "Long · Kuromi Gang",
+        "image": "assets/gallery/portfolio/kuromi-gang.jpg",
+        "thumbnail": "assets/gallery/portfolio/thumbs/kuromi-gang.jpg",
+        "alt": "Long square Gel-X nails with glossy black panels, hot-pink framing, silver heart charms, and Kuromi character accents."
+      },
+      {
+        "name": "Long · Pink Retro Future",
+        "image": "assets/gallery/portfolio/pink-retro-future.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/pink-retro-future.webp",
+        "alt": "Long Gel-X almond nails with pink gradients, silver chrome frames, concentric spirals, grid lines, stars, and reflective accents."
+      },
+      {
+        "name": "Long · Blush Bow Fantasy",
+        "image": "assets/gallery/portfolio/blush-bow-fantasy.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/blush-bow-fantasy.webp",
+        "alt": "Long blush almond nails with white ribbon linework, sculpted bows, and tiny red accents."
+      }
+    ]
+  },
+  "builder-gel": {
+    "title": "Builder Gel",
+    "description": "Verified builder-gel studio sets showing medium length, structure, and detailed finishes.",
+    "examples": [
+      {
+        "name": "Medium · 3D Pink Chrome",
+        "image": "assets/gallery/portfolio/pink-liquid-chrome.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/pink-liquid-chrome.webp",
+        "alt": "Medium almond builder-gel nails with iridescent pink chrome, sculpted 3D swirls, and pearl accents."
+      },
+      {
+        "name": "Medium · Y2K Ocean Cat-Eye",
+        "image": "assets/gallery/portfolio/opal-chrome-armor.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/opal-chrome-armor.webp",
+        "alt": "Medium almond builder-gel nails with blue ocean cat-eye centers and raised silver-chrome framing."
+      },
+      {
+        "name": "Medium · Hello Kitty Red French",
+        "image": "assets/gallery/portfolio/hello-kitty-red-french.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/hello-kitty-red-french.webp",
+        "alt": "Medium builder-gel almond nails with nude bases, red French tips, white Hello Kitty faces, polka dots, and raised red bows."
+      },
+      {
+        "name": "Cosmic Cat-Eye",
+        "image": "assets/gallery/portfolio/cosmic-cat-eye.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/cosmic-cat-eye.webp",
+        "alt": "Short black cat-eye nails with teal shimmer and hand-painted gold celestial details."
+      },
+      {
+        "name": "Turquoise Relics",
+        "image": "assets/gallery/portfolio/turquoise-relics.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/turquoise-relics.webp",
+        "alt": "Short square nude nails with turquoise gem effects, chrome framing, glitter, and fine star details."
+      }
+    ]
+  },
+  "custom-nail-art": {
+    "title": "Custom Nail Art",
+    "description": "Detailed add-on concepts across Gel-X and builder foundations, from chrome and celestial work to sculpted charms.",
+    "examples": [
+      {
+        "name": "Blush Garden",
+        "image": "assets/gallery/portfolio/blush-garden.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/blush-garden.webp",
+        "alt": "Short blush-glazed oval nails with delicate white flowers and trailing leaf details."
+      },
+      {
+        "name": "Icy Crystal Shimmer",
+        "image": "assets/gallery/portfolio/icy-crystal-shimmer.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/icy-crystal-shimmer.webp",
+        "alt": "Short icy white shimmer nails with fine white linework and tiny silver crystals."
+      },
+      {
+        "name": "Colorful Kitty Crew",
+        "image": "assets/gallery/portfolio/colorful-kitty-crew.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/colorful-kitty-crew.webp",
+        "alt": "Short nude oval nails with colorful hand-painted cartoon cats."
+      },
+      {
+        "name": "Cozy Critter Mix",
+        "image": "assets/gallery/portfolio/cozy-critter-mix.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/cozy-critter-mix.webp",
+        "alt": "Short neutral nails with hand-painted cats, paw prints, stars, a mushroom, and a bunny."
+      },
+      {
+        "name": "Blush Bow Fantasy",
+        "image": "assets/gallery/portfolio/blush-bow-fantasy.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/blush-bow-fantasy.webp",
+        "alt": "Long blush almond nails with white ribbon linework, sculpted bows, and tiny red accents."
+      },
+      {
+        "name": "3D Pink Chrome",
+        "image": "assets/gallery/portfolio/pink-liquid-chrome.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/pink-liquid-chrome.webp",
+        "alt": "Medium almond builder-gel nails with iridescent pink chrome, sculpted 3D swirls, and pearl accents."
+      },
+      {
+        "name": "Y2K Ocean Cat-Eye",
+        "image": "assets/gallery/portfolio/opal-chrome-armor.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/opal-chrome-armor.webp",
+        "alt": "Medium almond builder-gel nails with blue ocean cat-eye centers and raised silver-chrome framing."
+      },
+      {
+        "name": "Celestial Ice",
+        "image": "assets/gallery/portfolio/silver-celestial-cat-eye.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/silver-celestial-cat-eye.webp",
+        "alt": "Medium almond Gel-X nails in icy steel-blue cat-eye polish with silver celestial linework, pearls, and crystal accents."
+      },
+      {
+        "name": "Orchid Princess",
+        "image": "assets/gallery/portfolio/celestial-white-florals.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/celestial-white-florals.webp",
+        "alt": "Medium-long almond Gel-X nails with pearl-white shimmer, sculpted orchid petals, crystals, and silver accents."
+      },
+      {
+        "name": "Killer Fairy Crystal",
+        "image": "assets/gallery/portfolio/killer-fairy-crystal.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/killer-fairy-crystal.webp",
+        "alt": "Long pearl-chrome Gel-X stiletto nails with white fairy-wing petals, crystal bows, and rhinestone clusters."
+      },
+      {
+        "name": "Citrus Circus",
+        "image": "assets/gallery/portfolio/citrus-circus.jpg",
+        "thumbnail": "assets/gallery/portfolio/thumbs/citrus-circus.jpg",
+        "alt": "Long pink Gel-X stiletto nails with citrus slices, white blossoms, pink dots, and dimensional floral accents."
+      },
+      {
+        "name": "Kuromi Gang",
+        "image": "assets/gallery/portfolio/kuromi-gang.jpg",
+        "thumbnail": "assets/gallery/portfolio/thumbs/kuromi-gang.jpg",
+        "alt": "Long square Gel-X nails with glossy black panels, hot-pink framing, silver heart charms, and Kuromi character accents."
+      },
+      {
+        "name": "Pink Retro Future",
+        "image": "assets/gallery/portfolio/pink-retro-future.webp",
+        "thumbnail": "assets/gallery/portfolio/thumbs/pink-retro-future.webp",
+        "alt": "Long Gel-X almond nails with pink gradients, silver chrome frames, concentric spirals, grid lines, stars, and reflective accents."
+      }
+    ]
+  }
+}

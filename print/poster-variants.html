@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Six full-size Trininails posting-flyer layout concepts." />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Trininails Studio — Poster Layouts</title>
+    <link rel="stylesheet" href="print.css?v=20260821-46" />
+  </head>
+  <body class="print-document">
+    <nav class="screen-toolbar" aria-label="Print preview controls">
+      <a href="index.html">Print studio</a>
+      <span>Seven poster concepts · Seven portfolio photos each</span>
+      <button type="button" onclick="window.print()">Print / save PDF</button>
+    </nav>
+
+    <main id="poster-variants"></main>
+
+    <script>
+      const photos = [
+        ["../assets/gallery/portfolio/opal-chrome-armor.webp", "Y2K Ocean", "Blue cat-eye builder-gel nails with chrome framing"],
+        ["../assets/gallery/portfolio/gel-x-medium-celestial-ice-hero.jpg", "Celestial Ice", "Medium Gel-X celestial ice nail set"],
+        ["../assets/portfolio/pink-bow-ribbon-set-960.webp", "Pink Bow Ribbons", "Long blush nails with white ribbon linework and sculpted bows"],
+        ["assets/price-flyer-mid-left.jpg", "Citrus Circus", "Long pink Gel-X nails with citrus and dimensional floral art"],
+        ["assets/price-flyer-mid-right.jpg", "Kuromi Gang", "Black and pink character nail art with Kuromi accents"],
+        ["../assets/gallery/portfolio/celestial-white-florals.webp", "Orchid Princess", "Pearl-white nails with sculpted orchid petals"],
+        ["../assets/gallery/portfolio/lavender-butterfly-glaze.webp", "Coquette Bows", "Short pearl-glazed nails with bow details"],
+      ];
+      const concepts = [
+        ["variant-a", "01 · Editorial lead"],
+        ["variant-b", "02 · Split gallery"],
+        ["variant-c", "03 · Magazine mosaic"],
+        ["variant-d", "04 · Film strips"],
+        ["variant-e", "05 · Framed portfolio"],
+        ["variant-f", "06 · Full-bleed grid"],
+      ];
+      const photoMarkup = photos.slice(0, 5).map(([src, name, alt]) => `
+        <figure><img src="${src}" width="1050" height="1400" alt="${alt}" /><figcaption>${name}</figcaption></figure>
+      `).join("");
+      const infoPhotoMarkup = photos.slice(5).map(([src, name, alt]) => `
+        <figure class="variant-info-photo"><img src="${src}" width="1050" height="1400" alt="${alt}" /><figcaption>${name}</figcaption></figure>
+      `).join("");
+      const priceMarkup = `
+        <div><span>Basic nail art</span><strong>from $40</strong></div>
+        <div><span>Gel-X</span><strong>from $45</strong></div>
+        <div><span>Builder gel</span><strong>from $50</strong></div>
+        <div><span>Custom designs</span><strong>+$5</strong></div>
+      `;
+
+      document.querySelector("#poster-variants").innerHTML = concepts.map(([className, label]) => `
+        <section class="print-sheet variant-poster ${className}" aria-label="${label} Trininails poster concept">
+          <header class="variant-header">
+            <div class="print-wordmark">trininails<span>✦</span></div>
+            <span>San Jose · By appointment</span>
+            <b>${label}</b>
+          </header>
+          <div class="variant-title">
+            <div><p>Independent nail artist · Recent studio work</p><h1>Nail art for your <em>divine era.</em></h1></div>
+            <strong>Sets from $40</strong>
+          </div>
+          <section class="variant-gallery" aria-label="Trininails portfolio">${photoMarkup}</section>
+          <section class="variant-info">
+            <div class="variant-menu"><h2>Choose your set.</h2><div class="variant-prices">${priceMarkup}</div><p>60-minute appointments · 90 minutes with customized nail art</p></div>
+            ${infoPhotoMarkup}
+            <div class="variant-action">
+              <div><p>View styles &amp; reserve</p><h2>Scan to book.</h2><strong>◎ trininails.studio</strong><span>Text 408-888-7711</span></div>
+              <div class="variant-brand"><img class="variant-logo" src="../assets/trininails-divine-v2-420.jpg" width="420" height="420" alt="Trininails Studio angel-wing logo" /><img class="variant-qr" src="assets/trininails-instagram-profile-qr.png" width="465" height="551" alt="QR code linking to @trininails.studio on Instagram" /></div>
+            </div>
+          </section>
+          <footer class="variant-footer"><span>@trininails.studio</span><span>Nail art that tells your story.</span></footer>
+        </section>
+      `).join("");
+
+      document.querySelector("#poster-variants").insertAdjacentHTML("beforeend", `
+        <section class="print-sheet woven-poster" aria-label="Woven tiles Trininails poster concept">
+          <header class="variant-header"><div class="print-wordmark">trininails<span>✦</span></div><span>San Jose · By appointment</span><b>07 · Woven tiles</b></header>
+          <div class="variant-title"><div><p>Independent nail artist · Recent studio work</p><h1>Nail art for your <em>divine era.</em></h1></div><strong>Sets from $40</strong></div>
+          <section class="woven-photo-grid" aria-label="Six recent Trininails sets">
+            ${photos.slice(0, 6).map(([src, name, alt]) => `<figure><img src="${src}" width="1050" height="1400" alt="${alt}" /><figcaption>${name}</figcaption></figure>`).join("")}
+          </section>
+          <section class="woven-bottom">
+            <figure class="woven-seventh"><img src="${photos[6][0]}" width="1050" height="1400" alt="${photos[6][2]}" /><figcaption>${photos[6][1]}</figcaption></figure>
+            <div class="woven-logo"><img src="../assets/trininails-divine-v2-420.jpg" width="420" height="420" alt="Trininails Studio angel-wing logo" /><span>Trininails Studio</span></div>
+            <div class="woven-details"><div><p>Choose your set.</p><div class="woven-prices">${priceMarkup}</div></div><div class="woven-book"><strong>Scan to book</strong><span>◎ trininails.studio</span><span>Text 408-888-7711</span><img src="assets/trininails-instagram-profile-qr.png" width="465" height="551" alt="QR code linking to @trininails.studio on Instagram" /></div></div>
+          </section>
+          <footer class="variant-footer"><span>@trininails.studio</span><span>Nail art that tells your story.</span></footer>
+        </section>
+      `);
+    </script>
+  </body>
+</html>

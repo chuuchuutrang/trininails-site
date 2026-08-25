@@ -1,0 +1,694 @@
+:root {
+  --night: #050407;
+  --night-soft: #0d0911;
+  --pearl: #fff8fc;
+  --aurora-pink: #f4a9e3;
+  --aurora-blue: #a8d7ff;
+  --rose: #e8afbd;
+  --rose-deep: #8f5367;
+}
+
+.dark-card-document {
+  color: var(--pearl);
+  background: #17131a;
+}
+
+.dark-card-pages {
+  display: grid;
+  justify-content: center;
+  gap: 0.22in;
+  margin: 0.35in auto 0.5in;
+}
+
+.dark-concept-label {
+  width: 3.75in;
+  margin: 0.18in 0 -0.08in;
+  color: #f5e9ef;
+  font: 18pt/1 "Italiana", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.dark-concept-label:first-child {
+  margin-top: 0;
+}
+
+.dark-concept-label span {
+  display: block;
+  margin-bottom: 0.04in;
+  color: #cba9b5;
+  font: 600 6pt/1 "Manrope", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.dark-card {
+  position: relative;
+  width: 3.75in;
+  height: 2.25in;
+  overflow: hidden;
+  color: var(--pearl);
+  background: var(--night);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.42);
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.dark-card::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  inset: 0.125in;
+  pointer-events: none;
+  border: 0.35pt solid rgba(255, 255, 255, 0.13);
+}
+
+.dark-card em {
+  font-style: normal;
+}
+
+.dark-kicker,
+.dark-services,
+.dark-domain,
+.dark-contact-line,
+.nocturne-front-copy strong,
+.nocturne-front-copy b,
+.nocturne-contact,
+.dark-qr strong {
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.dark-kicker {
+  margin: 0;
+  font-size: 5.5pt;
+  font-weight: 600;
+  line-height: 1.45;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.dark-services {
+  margin: 0;
+  font-size: 5.35pt;
+  font-weight: 600;
+  line-height: 1.35;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  white-space: nowrap;
+}
+
+.dark-qr {
+  position: absolute;
+  z-index: 4;
+  display: grid;
+  justify-items: center;
+  gap: 0.045in;
+}
+
+.dark-qr img {
+  width: 0.72in;
+  height: auto;
+  padding: 0.035in;
+  background: #fff;
+  border: 0.5pt solid rgba(255, 255, 255, 0.62);
+}
+
+.dark-qr strong {
+  color: #f7eaf0;
+  font-size: 5.4pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Concept 01: iridescent, celestial, and intentionally high contrast. */
+.aura-front {
+  display: grid;
+  grid-template-columns: 2.2in 1fr;
+  align-items: center;
+  background:
+    radial-gradient(circle at 34% 48%, rgba(162, 115, 197, 0.22), transparent 1.16in),
+    radial-gradient(circle at 88% 9%, rgba(98, 172, 221, 0.12), transparent 0.9in),
+    #020204;
+}
+
+.aura-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(118deg, transparent 42%, rgba(255, 255, 255, 0.035) 54%, transparent 66%);
+}
+
+.aura-logo {
+  position: relative;
+  z-index: 2;
+  width: 2.18in;
+  height: 2.18in;
+  margin-left: 0.03in;
+}
+
+.aura-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aura-front-copy {
+  position: relative;
+  z-index: 2;
+  min-height: 1.56in;
+  padding: 0.08in 0.24in 0.08in 0.16in;
+  border-left: 0.5pt solid rgba(209, 189, 255, 0.36);
+}
+
+.aura-front-copy .dark-kicker {
+  color: #d5c7e7;
+}
+
+.dark-tagline {
+  margin: 0.2in 0 0;
+  color: #fff;
+  font: 15pt/0.94 "Italiana", Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+.dark-tagline span,
+.dark-tagline em,
+.nocturne-front-copy p span,
+.nocturne-front-copy strong span {
+  display: block;
+  white-space: nowrap;
+}
+
+.dark-tagline em {
+  color: var(--aurora-pink);
+}
+
+.dark-star {
+  display: block;
+  margin: 0.12in 0 0.08in;
+  color: #cae4ff;
+  font-size: 8pt;
+  text-shadow: 0 0 0.08in #bb8cf6;
+}
+
+.dark-domain {
+  margin: 0;
+  color: #e9dff1;
+  font-size: 5.7pt;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+}
+
+.aura-back {
+  background:
+    radial-gradient(ellipse at 14% 88%, rgba(237, 126, 207, 0.19), transparent 1.55in),
+    radial-gradient(ellipse at 92% 12%, rgba(84, 163, 230, 0.17), transparent 1.25in),
+    linear-gradient(122deg, #050308, #0b0712 58%, #030408);
+}
+
+.aura-back::before {
+  content: "✦";
+  position: absolute;
+  top: -0.2in;
+  left: 2.3in;
+  color: rgba(246, 195, 237, 0.13);
+  font-size: 1.95in;
+  line-height: 1;
+  transform: rotate(8deg);
+  text-shadow: 0 0 0.2in rgba(161, 189, 255, 0.18);
+}
+
+.aura-back-copy {
+  position: absolute;
+  z-index: 3;
+  inset: 0.34in 1.18in 0.28in 0.32in;
+}
+
+.aura-back-copy .dark-kicker {
+  color: #cfc2dc;
+}
+
+.aura-back-copy h2 {
+  margin: 0.11in 0 0.09in;
+  color: #fff;
+  font: 20.5pt/0.83 "Italiana", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.aura-back-copy h2 em {
+  color: var(--aurora-pink);
+}
+
+.aura-back-copy .dark-services {
+  color: #d5c8dc;
+}
+
+.dark-contact-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 0.14in;
+  color: #f6edf5;
+  font-size: 5.8pt;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.aura-qr {
+  right: 0.31in;
+  bottom: 0.3in;
+}
+
+.aura-qr img {
+  box-shadow: 0 0 0.12in rgba(177, 148, 244, 0.24);
+}
+
+/* Concept 02: rose chrome, restrained typography, and a warmer black. */
+.nocturne-front {
+  display: grid;
+  grid-template-columns: 2.3in 1fr;
+  align-items: center;
+  background:
+    radial-gradient(circle at 24% 47%, rgba(168, 78, 111, 0.19), transparent 1.22in),
+    linear-gradient(105deg, #020202 0 62%, #0f080c 62% 100%);
+}
+
+.nocturne-front::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 2.28in;
+  width: 0.02in;
+  background: linear-gradient(transparent 9%, #e7a6b9 42%, #fff0f5 50%, #9e5069 58%, transparent 91%);
+  box-shadow: 0 0 0.12in rgba(229, 142, 170, 0.24);
+}
+
+.nocturne-logo {
+  position: relative;
+  z-index: 2;
+  width: 2.22in;
+  height: 2.22in;
+  margin-left: 0.04in;
+}
+
+.nocturne-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nocturne-front-copy {
+  position: relative;
+  z-index: 3;
+  padding: 0.02in 0.28in 0 0.19in;
+}
+
+.nocturne-sigil {
+  display: block;
+  color: #f4cbd6;
+  font-size: 10pt;
+  text-shadow: 0 0 0.08in rgba(240, 154, 182, 0.66);
+}
+
+.nocturne-front-copy p {
+  margin: 0.16in 0 0;
+  color: #fff8fb;
+  font: 14.5pt/0.98 "Italiana", Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+.nocturne-front-copy i {
+  display: block;
+  width: 0.34in;
+  height: 0.005in;
+  margin: 0.16in 0 0.11in;
+  background: linear-gradient(90deg, #f1b8c8, transparent);
+}
+
+.nocturne-front-copy strong,
+.nocturne-front-copy b {
+  display: block;
+  font-size: 5.45pt;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.nocturne-front-copy strong {
+  color: #cbaeb8;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nocturne-front-copy strong span + span {
+  margin-top: 0.015in;
+}
+
+.nocturne-front-copy b {
+  margin-top: 0.04in;
+  color: #f8edf1;
+}
+
+.nocturne-back {
+  background:
+    radial-gradient(circle at 10% 100%, rgba(154, 72, 102, 0.26), transparent 1.35in),
+    radial-gradient(circle at 97% 0, rgba(226, 171, 190, 0.08), transparent 1.05in),
+    #080406;
+}
+
+.nocturne-back::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 0 31%, rgba(255, 255, 255, 0.04) 31.2%, transparent 31.5%),
+    linear-gradient(112deg, transparent 58%, rgba(235, 163, 186, 0.05) 70%, transparent 81%);
+}
+
+.nocturne-watermark {
+  position: absolute;
+  z-index: 1;
+  left: -0.12in;
+  bottom: -0.26in;
+  width: 1.48in;
+  height: 1.48in;
+  opacity: 0.16;
+  filter: saturate(0.75);
+}
+
+.nocturne-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nocturne-back-copy {
+  position: absolute;
+  z-index: 3;
+  inset: 0.32in 1.12in 0.28in 0.36in;
+}
+
+.nocturne-back-copy .dark-kicker {
+  color: #d6aeb9;
+}
+
+.nocturne-back-copy h2 {
+  margin: 0.1in 0 0.08in;
+  color: #fff8fb;
+  font: 19pt/0.86 "Italiana", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.nocturne-back-copy h2 em {
+  color: #eca9bd;
+}
+
+.nocturne-back-copy .dark-services {
+  color: #d0adb7;
+}
+
+.nocturne-contact {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  gap: 0.11in;
+  color: #f1e1e6;
+  font-size: 5.6pt;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.nocturne-qr {
+  right: 0.3in;
+  bottom: 0.29in;
+}
+
+.nocturne-qr img {
+  border-color: #e8b7c5;
+  box-shadow: 0 0 0 0.012in rgba(221, 153, 174, 0.3), 0 0 0.12in rgba(172, 82, 111, 0.22);
+}
+
+/* Concept 03: one dark brand face paired with a light, photo-led Instagram side. */
+.contrast-front {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(ellipse at 50% 45%, rgba(163, 111, 200, 0.18), transparent 1.35in),
+    radial-gradient(circle at 85% 20%, rgba(109, 185, 238, 0.1), transparent 0.74in),
+    #020204;
+}
+
+.contrast-front::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, transparent 28%, rgba(255, 255, 255, 0.035) 49%, transparent 68%),
+    radial-gradient(circle at 17% 78%, rgba(242, 151, 219, 0.12), transparent 0.7in);
+}
+
+.contrast-glow {
+  position: absolute;
+  z-index: 1;
+  width: 1.34in;
+  height: 1.34in;
+  border: 0.4pt solid rgba(224, 202, 255, 0.16);
+  border-radius: 50%;
+  box-shadow: 0 0 0.32in rgba(196, 134, 236, 0.11), inset 0 0 0.22in rgba(125, 194, 241, 0.08);
+}
+
+.contrast-logo {
+  position: absolute;
+  z-index: 2;
+  top: 0.04in;
+  left: 50%;
+  width: 1.9in;
+  height: 1.9in;
+  transform: translateX(-50%);
+}
+
+.contrast-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.contrast-front-copy {
+  position: absolute;
+  z-index: 3;
+  right: 0.28in;
+  bottom: 0.22in;
+  left: 0.28in;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: 0.075in;
+  border-top: 0.45pt solid rgba(220, 193, 240, 0.28);
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.contrast-front-copy p,
+.contrast-front-copy span {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.contrast-front-copy p {
+  color: #fff7fc;
+  font: 9.4pt/1 "Italiana", Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+.contrast-front-copy span {
+  color: #cdbed8;
+  font-size: 5.1pt;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+.contrast-back {
+  color: #432d35;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(235, 184, 206, 0.3), transparent 0.8in),
+    linear-gradient(112deg, #fffdfa, #f7edef 76%, #f3e3e8);
+}
+
+.contrast-back::before {
+  content: "✦";
+  position: absolute;
+  right: 0.17in;
+  bottom: 0.09in;
+  color: rgba(180, 113, 139, 0.22);
+  font-size: 18pt;
+}
+
+.contrast-back::after {
+  border-color: rgba(123, 73, 92, 0.25);
+}
+
+.contrast-photo {
+  position: absolute;
+  z-index: 2;
+  top: 0.2in;
+  bottom: 0.2in;
+  left: 0.2in;
+  width: 1.24in;
+  margin: 0;
+  overflow: hidden;
+  border: 0.7pt solid rgba(145, 88, 109, 0.34);
+  border-radius: 0.1in;
+  box-shadow: 0 0.08in 0.16in rgba(91, 51, 66, 0.12);
+}
+
+.contrast-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 52%;
+}
+
+.contrast-back-copy {
+  position: absolute;
+  z-index: 3;
+  top: 0.27in;
+  left: 1.62in;
+  width: 1.13in;
+}
+
+.contrast-kicker,
+.contrast-meta,
+.contrast-instagram {
+  font-family: "Manrope", Arial, sans-serif;
+}
+
+.contrast-kicker {
+  margin: 0;
+  color: #9d6178;
+  font-size: 5.2pt;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
+.contrast-back-copy h2 {
+  margin: 0.09in 0 0.12in;
+  color: #432d35;
+  font: 16.5pt/0.87 "Italiana", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+
+.contrast-back-copy h2 em {
+  color: #b16e86;
+}
+
+.contrast-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.055in;
+  color: #65404d;
+}
+
+.instagram-mark {
+  width: 0.18in;
+  height: 0.18in;
+  overflow: visible;
+  fill: none;
+  stroke: #b05e7c;
+  stroke-width: 1.65;
+}
+
+.instagram-mark .instagram-dot {
+  fill: #b05e7c;
+  stroke: none;
+}
+
+.contrast-instagram strong {
+  font-size: 5.55pt;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.contrast-meta {
+  margin: 0.1in 0 0;
+  color: #8b6673;
+  font-size: 4.75pt;
+  font-weight: 650;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+}
+
+.contrast-qr {
+  position: absolute;
+  z-index: 4;
+  right: 0.25in;
+  bottom: 0.26in;
+  width: 0.67in;
+  overflow: hidden;
+  border: 0.65pt solid rgba(151, 92, 114, 0.4);
+  border-radius: 0.055in;
+  box-shadow: 0 0.05in 0.12in rgba(109, 61, 79, 0.12);
+}
+
+.contrast-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media print {
+  html,
+  body.dark-card-document {
+    width: 3.75in;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: #000;
+  }
+
+  .dark-card-pages {
+    display: block;
+    margin: 0;
+  }
+
+  .dark-concept-label {
+    display: none;
+  }
+
+  .dark-card {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .dark-card:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dark-card-pages {
+    transform-origin: top center;
+  }
+}

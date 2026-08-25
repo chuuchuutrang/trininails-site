@@ -1,0 +1,48 @@
+@import url("print.css");
+
+.dream-price-flyer { position: relative; overflow: hidden; padding: .31in .34in .28in; color: #4a2d38; background: linear-gradient(145deg,#fffaf6 0%,#f9eef1 22%,#f3dfe6 46%,#f8edf2 67%,#eadfea 84%,#f8dfe7 100%); }
+.dream-border { position: absolute; z-index: 5; inset: .13in; border: 1pt solid rgba(181,98,123,.58); border-radius: .24in; pointer-events: none; }
+.dream-border::after { content:""; position:absolute; inset:.055in; border:.45pt solid rgba(181,98,123,.28); border-radius:.18in; }
+.dream-botanical { position:absolute; z-index:0; width:1.35in; fill:none; stroke:#c9869a; stroke-width:1.4; opacity:.22; }
+.dream-botanical-a { left:-.12in; top:-.06in; transform:rotate(-14deg); }
+.dream-botanical-b { right:-.05in; bottom:.35in; transform:rotate(166deg); }
+.dream-columns { position:relative; z-index:1; display:grid; height:9.95in; grid-template-columns:3.2in minmax(0,1fr); gap:.16in; }
+.dream-left,.dream-right { min-width:0; }
+.dream-left { display:flex; flex-direction:column; }
+.dream-brand { position:relative; display:grid; min-height:2.94in; place-items:center; padding:0; }
+.dream-brand>img { width:112%; height:3.08in; max-width:none; object-fit:contain; }
+.dream-starting { position:absolute; right:.01in; top:50%; display:grid; width:.88in; height:.88in; place-content:center; color:#fffaf7; background:linear-gradient(145deg,#cb6b87,#9f405f); border:2.5pt solid #fff7f4; border-radius:50%; transform:translateY(-50%) rotate(7deg); text-align:center; text-transform:uppercase; }
+.dream-starting span { font:600 8pt/.95 "Manrope",Arial,sans-serif; letter-spacing:.12em; }
+.dream-starting .starting-value { margin-top:.025in; font-size:15pt; letter-spacing:.04em; }
+.dream-flourish { position:absolute; bottom:.01in; left:50%; width:2.7in; color:#c47f94; font-size:7pt; text-align:center; letter-spacing:.09em; transform:translateX(-50%); }
+.dream-contact { position:relative; display:flex; min-height:.9in; flex-direction:column; justify-content:center; gap:.045in; margin:.01in 0 .1in; padding-right:1.02in; font-size:7.5pt; font-weight:600; text-transform:uppercase; letter-spacing:.07em; }
+.dream-contact span { display:flex; align-items:center; gap:.065in; }
+.dream-contact b { display:grid; width:.22in; height:.22in; place-items:center; color:#fff; background:#c56f88; border-radius:50%; font-size:7pt; }
+.dream-contact .text-globe { font-family:"Apple Symbols","Segoe UI Symbol","Noto Sans Symbols 2",sans-serif; font-size:8pt; font-style:normal; }
+.dream-price-title { display:grid; height:.48in; place-items:center; color:#fff8f3; background:linear-gradient(135deg,#c8617d,#a84765); border-radius:99px; font:600 15pt/1 "Manrope",sans-serif; letter-spacing:.12em; }
+.dream-price-list { display:flex; flex-direction:column; gap:.1in; margin-top:.11in; }
+.dream-price-list .print-price-group { padding:0 0 .13in; background:#fffaf8; border:.6pt solid rgba(185,90,119,.16); border-radius:.13in; }
+.dream-price-list h3 { margin:0 0 .08in; padding:.105in .12in; color:#8f405a; background:rgba(244,199,212,.88); border-radius:99px; font:13pt/1 "Italiana",Georgia,serif; text-align:center; text-transform:uppercase; letter-spacing:.04em; }
+.dream-price-list h3 span { color:#c86f89; }
+.dream-price-list .print-price-row { display:grid; grid-template-columns:auto 1fr auto; gap:.075in; padding:.055in .13in; font-size:9.4pt; line-height:1; }
+.dream-price-list .print-price-row i { align-self:end; border-bottom:1pt dotted rgba(82,45,56,.42); transform:translateY(-.025in); }
+.dream-price-list .print-price-row strong { font:12pt/1 "Italiana",Georgia,serif; font-weight:400; }
+.dream-left-note { position:relative; margin-block:auto; color:#93536a; font-size:6.3pt; font-weight:600; text-align:center; text-transform:uppercase; letter-spacing:.09em; transform:translateY(.1in); }
+.dream-right { position:relative; display:grid; grid-template-rows:3.86in 4.23in 1.42in; gap:.14in; padding-top:.05in; }
+.dream-hero { position:relative; margin:0; overflow:hidden; background:#fff; border:2pt solid rgba(194,99,126,.66); border-radius:.24in; }
+.dream-hero img { width:100%; height:100%; object-fit:cover; object-position:center 56%; }
+.dream-heart { position:absolute; z-index:3; color:#c65f7c; font:34pt/1 Georgia,serif; text-shadow:0 2px #fff; }
+.dream-heart-a { left:-.16in; top:3.58in; transform:rotate(-12deg); }
+.dream-heart-b { right:-.12in; top:7.98in; transform:rotate(12deg); }
+.dream-collage { display:grid; grid-template:repeat(2,1fr)/repeat(2,1fr); gap:.1in; }
+.dream-collage img { width:100%; height:100%; min-height:0; object-fit:cover; object-position:center 45%; border:1.5pt solid rgba(201,103,131,.58); border-radius:.17in; }
+.dream-book { position:relative; display:grid; grid-template-columns:1fr 1in; align-items:center; gap:.1in; padding:.07in .15in; background:#fff8f2; border:1.5pt solid rgba(185,90,119,.58); border-radius:.2in; }
+.dream-book h2 { margin:0; color:#9f3e5e; font:italic 36pt/.88 "Italiana",Georgia,serif; font-weight:400; white-space:nowrap; }
+.dream-book-lower { display:flex; align-items:center; justify-content:space-between; gap:.08in; margin-top:.1in; }
+.dream-book-lower i { flex:1; color:#c5607d; font:normal 10.5pt/1 "Apple Symbols",Georgia,serif; letter-spacing:.01em; text-align:center; white-space:nowrap; }
+.dream-book span { display:block; padding-right:.01in; font-size:10.5pt; font-weight:600; text-align:right; text-transform:uppercase; letter-spacing:.07em; white-space:nowrap; }
+.dream-book img { width:.94in; height:auto; padding:.04in; background:#fff; border-radius:.09in; }
+.dream-footer { position:absolute; z-index:2; right:.34in; bottom:.16in; left:.34in; display:flex; height:.38in; align-items:center; justify-content:space-between; padding:0 .24in; color:#fff8f4; background:#7e4356; border-radius:99px; font-size:7pt; letter-spacing:.08em; }
+.dream-footer strong { font:italic 11pt/1 "Italiana",Georgia,serif; font-weight:400; }
+
+@media print { .screen-toolbar { display:none!important; } }

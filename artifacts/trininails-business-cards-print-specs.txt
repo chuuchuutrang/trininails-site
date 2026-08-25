@@ -1,0 +1,34 @@
+TRININAILS STUDIO — PROFESSIONAL BUSINESS CARDS
+
+Production file:
+  trininails-business-cards-professional.pdf
+
+Page order:
+  Page 1 — Front
+  Page 2 — Back
+
+Finished size:
+  3.5 × 2 inches, landscape
+
+Bleed:
+  0.125 inch on every edge
+  Supplied PDF page size: 3.75 × 2.25 inches
+
+PDF page boxes:
+  MediaBox / BleedBox: 3.75 × 2.25 inches
+  TrimBox: 3.5 × 2 inches, centered
+
+Printer instructions:
+  Print at 100% / actual size. Do not fit, shrink, or add margins.
+  Two-sided, head-to-head orientation.
+  No crop marks are included; use the PDF TrimBox.
+  All backgrounds extend through the bleed.
+  Important text, logo, photo, and QR content remain inside the safe area.
+  Artwork is supplied in sRGB. Ask for a digital proof if the printer converts to CMYK.
+  Rounded corners are optional finishing and are not baked into the artwork.
+
+QR artwork:
+  Uses print/assets/trininails-instagram-profile-qr.png exactly.
+  This is Instagram's branded profile QR and is not decoded by the generic
+  OpenCV verifier. Scan the final printer proof with the Instagram app or a
+  phone camera before approving the full print run.

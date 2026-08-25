@@ -1,0 +1,97 @@
+:root { --flyer-night:#050407; --flyer-pearl:#fff8fc; --flyer-muted:#cbbfc9; --flyer-blue:#a8d7ff; --flyer-pink:#f4a9e3; --flyer-rose:#e9a1ba; }
+.dark-flyer-document { color:var(--flyer-pearl); background:#17131a; }
+.dark-flyer-pages { display:grid; justify-content:center; gap:.24in; margin:.4in auto .6in; }
+.dark-flyer-label { width:8.5in; margin:.18in 0 -.08in; color:#f5e9ef; font:25pt/1 "Italiana",Georgia,serif; font-weight:400; }
+.dark-flyer-label:first-child { margin-top:0; }
+.dark-flyer-label span { display:block; margin-bottom:.05in; color:#cba9b5; font:600 7pt/1 "Manrope",Arial,sans-serif; text-transform:uppercase; letter-spacing:.2em; }
+.dark-flyer { position:relative; margin-block:0; color:var(--flyer-pearl); print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+
+/* Original promotional flyer geometry; cool iridescent night skin. */
+.dark-final-flyer { --ink:#fff8fc; --wine:#d6c9d6; --pink:#f4a9e3; --line:rgba(219,199,231,.27); background:radial-gradient(circle at 14% 10%,rgba(126,89,180,.19),transparent 2.9in),radial-gradient(circle at 88% 70%,rgba(73,155,218,.14),transparent 3in),linear-gradient(150deg,#030205,#0b0710 55%,#030407); }
+.dark-final-flyer::before { border-color:rgba(226,203,240,.35); box-shadow:inset 0 0 .3in rgba(168,215,255,.035); }
+.dark-final-flyer .final-hero figure { background:#0e0a12; border:.7pt solid rgba(220,198,237,.34); box-shadow:0 0 .28in rgba(119,104,200,.12); }
+.dark-final-flyer .final-hero figure::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 62%,rgba(4,3,7,.25)); }
+.dark-final-flyer .final-hero figcaption { z-index:1; background:rgba(5,4,8,.82); border:.45pt solid rgba(255,255,255,.32); }
+.dark-final-flyer .final-hero-copy .print-eyebrow { color:var(--flyer-blue); }
+.dark-final-flyer .final-hero-copy h1 { color:#fff; text-shadow:0 0 .18in rgba(255,255,255,.05); }
+.dark-final-flyer .final-hero-copy h1 em,.dark-final-flyer .final-social-strip em { color:var(--flyer-pink); }
+.dark-final-flyer .final-hero-copy>p:not(.print-eyebrow) { color:#d7cad9; }
+.dark-final-flyer .final-logo { border-radius:.12in; mix-blend-mode:screen; }
+.dark-final-flyer .final-price-board { background:linear-gradient(135deg,rgba(82,55,91,.75),rgba(27,28,48,.78)); border:.6pt solid rgba(216,189,232,.22); }
+.dark-final-flyer .final-price-board .print-price-group { color:#f8eff8; background:rgba(255,255,255,.055); border-color:rgba(230,208,242,.18); }
+.dark-final-flyer .final-price-board .print-price-group h3 { color:#f4bfe6; border-color:rgba(228,199,238,.2); }
+.dark-final-flyer .final-price-board .print-price-group h3 span { color:var(--flyer-blue); }
+.dark-final-flyer .print-price-row i { border-color:rgba(239,220,244,.32); }
+.dark-final-flyer .final-social-strip>img,.dark-final-flyer .final-gallery figure { border:.6pt solid rgba(220,198,237,.32); box-shadow:0 0 .18in rgba(113,104,202,.09); }
+.dark-final-flyer .final-social-strip>div { color:#fff; background:linear-gradient(145deg,#562a50,#25314e 105%); border:.6pt solid rgba(255,255,255,.2); }
+.dark-final-flyer .final-ribbon { color:#fff; background:linear-gradient(90deg,#34223d,#1d2941,#4b2946); border:.45pt solid rgba(230,202,242,.26); }
+.dark-final-flyer .final-gallery-heading h2 { color:#fff; }
+.dark-final-flyer .final-gallery-heading span { color:var(--flyer-blue); }
+.dark-final-flyer .final-gallery figure { background:#0d0910; }
+.dark-final-flyer .final-gallery figcaption { color:#e9dbe9; }
+.dark-final-flyer .final-gallery-note { color:#ad9dac; }
+.dark-final-flyer .final-footer { color:#d9cad9; }
+.dark-final-flyer .final-footer a { color:inherit; }
+.dark-final-flyer .final-footer>img { border-radius:.04in; mix-blend-mode:screen; }
+
+/* Rose Nocturne applied to the promotional layout. */
+.dark-final-flyer.rose-palette { --wine:#e5c7d2; --pink:#f1a0bf; --line:rgba(236,161,191,.29); background:radial-gradient(circle at 82% 13%,rgba(164,56,102,.24),transparent 2.8in),radial-gradient(circle at 9% 82%,rgba(101,49,87,.2),transparent 3in),linear-gradient(150deg,#050304,#150810 55%,#070407); }
+.dark-final-flyer.rose-palette::before { border-color:rgba(236,155,190,.4); box-shadow:inset 0 0 .3in rgba(225,95,150,.04); }
+.dark-final-flyer.rose-palette .final-hero-copy .print-eyebrow,.dark-final-flyer.rose-palette .final-gallery-heading span { color:#efa1bd; }
+.dark-final-flyer.rose-palette .final-price-board { background:linear-gradient(135deg,rgba(102,38,67,.82),rgba(49,21,43,.86)); border-color:rgba(239,154,190,.25); }
+.dark-final-flyer.rose-palette .final-price-board .print-price-group h3 { color:#ffd3e2; }
+.dark-final-flyer.rose-palette .final-price-board .print-price-group h3 span { color:#efa1bd; }
+.dark-final-flyer.rose-palette .final-social-strip>div { background:linear-gradient(145deg,#762a4d,#431b3c 105%); }
+.dark-final-flyer.rose-palette .final-ribbon { background:linear-gradient(90deg,#54203e,#7b2c50,#54203e); }
+
+/* Original price flyer geometry; deep rose-chrome skin. */
+.dark-dream-price-flyer { color:#fff4f8; background:radial-gradient(circle at 84% 8%,rgba(154,63,104,.23),transparent 2.7in),radial-gradient(circle at 8% 90%,rgba(91,48,83,.23),transparent 2.6in),linear-gradient(150deg,#050304,#13080e 48%,#070407); }
+.dark-dream-price-flyer .dream-border { border-color:rgba(235,153,187,.58); box-shadow:inset 0 0 .35in rgba(229,111,167,.035); }
+.dark-dream-price-flyer .dream-border::after { border-color:rgba(234,169,196,.25); }
+.dark-dream-price-flyer .dream-botanical { stroke:#e99ab8; opacity:.28; }
+.dark-dream-price-flyer .dream-brand>img { width:104%; object-fit:contain; mix-blend-mode:screen; }
+.dark-dream-price-flyer .dream-flourish { color:#e7a5bc; }
+.dark-dream-price-flyer .dream-contact { color:#f3e5ea; }
+.dark-dream-price-flyer .dream-contact a { color:inherit; }
+.dark-dream-price-flyer .dream-contact b { color:#fff; background:#a9466e; }
+.dark-dream-price-flyer .dream-starting { color:#fff; background:linear-gradient(145deg,#cc688e,#7f294f); border-color:#f7cada; box-shadow:0 0 .22in rgba(213,92,143,.25); }
+.dark-dream-price-flyer .dream-price-title { color:#fff8fb; background:linear-gradient(135deg,#a53d66,#6f274c); border:.7pt solid rgba(255,210,227,.38); }
+.dark-dream-price-flyer .dream-price-list .print-price-group { color:#f9edf2; background:rgba(255,255,255,.05); border-color:rgba(234,154,186,.24); }
+.dark-dream-price-flyer .dream-price-list h3 { color:#ffd9e8; background:linear-gradient(90deg,rgba(141,48,83,.82),rgba(90,35,69,.84)); }
+.dark-dream-price-flyer .dream-price-list h3 span { color:#f0a7c2; }
+.dark-dream-price-flyer .dream-price-list .print-price-row i { border-color:rgba(255,222,235,.32); }
+.dark-dream-price-flyer .dream-left-note { color:#d9a7ba; }
+.dark-dream-price-flyer .dream-hero { background:#120a0f; border-color:rgba(232,137,175,.7); box-shadow:0 0 .28in rgba(153,58,100,.16); }
+.dark-dream-price-flyer .dream-collage img { border-color:rgba(233,137,176,.62); box-shadow:0 0 .14in rgba(151,49,91,.12); }
+.dark-dream-price-flyer .dream-heart { color:#f19aba; text-shadow:0 2px #4d142d; }
+.dark-dream-price-flyer .dream-book { color:#fff2f7; background:linear-gradient(135deg,rgba(84,30,57,.96),rgba(41,18,36,.98)); border-color:rgba(235,144,180,.63); }
+.dark-dream-price-flyer .dream-book h2 { color:#ffb9d2; }
+.dark-dream-price-flyer .dream-book-lower i { color:#ee9dbc; }
+.dark-dream-price-flyer .dream-footer { color:#fff6fa; background:linear-gradient(90deg,#642441,#8e3359,#642441); border:.5pt solid rgba(255,205,223,.35); }
+
+/* Midnight Aura applied to the price layout. */
+.dark-dream-price-flyer.midnight-palette { color:#f8f2fb; background:radial-gradient(circle at 84% 8%,rgba(82,119,189,.2),transparent 2.7in),radial-gradient(circle at 8% 90%,rgba(108,65,146,.22),transparent 2.6in),linear-gradient(150deg,#030205,#0b0813 48%,#030407); }
+.dark-dream-price-flyer.midnight-palette .dream-border { border-color:rgba(177,174,235,.58); box-shadow:inset 0 0 .35in rgba(120,173,236,.045); }
+.dark-dream-price-flyer.midnight-palette .dream-border::after { border-color:rgba(183,207,244,.25); }
+.dark-dream-price-flyer.midnight-palette .dream-botanical { stroke:#b8b6ed; }
+.dark-dream-price-flyer.midnight-palette .dream-flourish,.dark-dream-price-flyer.midnight-palette .dream-left-note { color:#b7cce9; }
+.dark-dream-price-flyer.midnight-palette .dream-contact b { background:#5965a2; }
+.dark-dream-price-flyer.midnight-palette .dream-starting { background:linear-gradient(145deg,#7788c6,#55427e); border-color:#d6daf7; box-shadow:0 0 .22in rgba(107,144,212,.22); }
+.dark-dream-price-flyer.midnight-palette .dream-price-title { background:linear-gradient(135deg,#505d9c,#55366f); border-color:rgba(212,217,255,.38); }
+.dark-dream-price-flyer.midnight-palette .dream-price-list .print-price-group { border-color:rgba(166,180,229,.25); }
+.dark-dream-price-flyer.midnight-palette .dream-price-list h3 { color:#e1e8ff; background:linear-gradient(90deg,rgba(66,76,127,.86),rgba(73,48,99,.86)); }
+.dark-dream-price-flyer.midnight-palette .dream-price-list h3 span,.dark-dream-price-flyer.midnight-palette .dream-book-lower i { color:#a8d7ff; }
+.dark-dream-price-flyer.midnight-palette .dream-hero,.dark-dream-price-flyer.midnight-palette .dream-collage img { border-color:rgba(157,183,229,.68); box-shadow:0 0 .2in rgba(87,115,186,.13); }
+.dark-dream-price-flyer.midnight-palette .dream-heart { color:#b8c8f2; text-shadow:0 2px #22264d; }
+.dark-dream-price-flyer.midnight-palette .dream-book { background:linear-gradient(135deg,rgba(47,53,91,.97),rgba(43,26,59,.98)); border-color:rgba(160,187,235,.65); }
+.dark-dream-price-flyer.midnight-palette .dream-book h2 { color:#c7d9ff; }
+.dark-dream-price-flyer.midnight-palette .dream-footer { background:linear-gradient(90deg,#323c72,#544076,#323c72); border-color:rgba(210,219,255,.35); }
+
+@page { size:Letter portrait; margin:0; }
+@media print {
+  .screen-toolbar,.dark-flyer-label { display:none!important; }
+  .dark-flyer-document { background:#fff; }
+  .dark-flyer-pages { display:block; margin:0; }
+  .dark-flyer { break-after:page; page-break-after:always; }
+  .dark-flyer:last-child { break-after:auto; page-break-after:auto; }
+}

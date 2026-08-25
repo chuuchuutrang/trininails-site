@@ -1,0 +1,12 @@
+TRININAILS.STUDIO — DEPLOYMENT COPY
+
+Upload everything INSIDE this folder to the web host's document root.
+Do not upload the enclosing deploy-ready folder itself unless the host asks for a site folder.
+
+After upload, verify:
+1. https://trininails.studio/
+2. https://trininails.studio/print/
+3. The PDF and card-preview buttons on the print page
+
+This folder is fully static. It does not require Node.js, Python, PHP, or a database.
+It is rebuilt by running: python3 scripts/render_all.py
