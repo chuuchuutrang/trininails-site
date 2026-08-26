@@ -41,6 +41,21 @@ Alternate layout:
   and Instagram QR. The light back omits the corner logo and centers the full
   contact-information block within the lower content area.
 
+Home-print production file:
+  trininails-final-business-card-home-print.pdf
+
+Home-print layout:
+  Uses the approved Midnight Aura front and Divine Contrast logo back.
+  Page 1 contains ten fronts; page 2 contains ten backs.
+  Each US Letter page holds a centered 2 × 5 grid of exact 3.5 × 2-inch cards.
+  Hairline cut marks sit in the outer margins and do not cover the artwork.
+
+Home-print instructions:
+  Letter paper · Portrait · Scale 100% / Actual size · Margins None
+  Two-sided · Flip on long edge · Headers and footers Off
+  Background graphics On · Do not fit or shrink
+  Print and cut one test sheet before using expensive card stock.
+
 
 FINAL PRICE FLYER
 
