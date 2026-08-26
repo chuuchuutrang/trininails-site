@@ -1,0 +1,74 @@
+TRININAILS STUDIO — FINAL PRINT SELECTIONS
+
+FINAL BUSINESS CARD
+
+Production file:
+  trininails-final-business-card.pdf
+
+Approved source pages:
+  Page 1 — Midnight Aura front (concept page 1)
+  Page 2 — Divine Contrast back (concept page 6)
+
+Finished size:
+  3.5 × 2 inches, landscape
+
+Bleed and page boxes:
+  0.125 inch bleed on every edge
+  MediaBox / BleedBox: 3.75 × 2.25 inches
+  TrimBox: 3.5 × 2 inches, centered
+
+Printer instructions:
+  Print at 100% / actual size. Do not fit, shrink, or add margins.
+  Two-sided, head-to-head orientation.
+  Use the embedded TrimBox; crop marks are intentionally omitted.
+  All backgrounds extend through the bleed.
+  Important text, logo, photo, contact information, and QR remain inside the safe area.
+  Artwork is supplied in sRGB. Request a digital proof before a large batch.
+  Rounded corners are optional and are not baked into the artwork.
+
+Key information included:
+  San Jose nail artist · By appointment
+  Text contact (protected image)
+  Instagram: @trininails.studio
+  Web: trininails.studio
+  Approved Instagram profile QR
+
+Alternate production file:
+  trininails-final-business-card-no-logo.pdf
+
+Alternate layout:
+  Uses the same approved front, dimensions, bleed, safe area, contact details,
+  and Instagram QR. The light back omits the corner logo and centers the full
+  contact-information block within the lower content area.
+
+
+FINAL PRICE FLYER
+
+Production file:
+  trininails-final-dark-price-flyer.pdf
+
+Approved source page:
+  Midnight Aura dark price flyer (concept page 3)
+
+Finished size:
+  8.5 × 11 inches, US Letter portrait
+
+Printer instructions:
+  Print at 100% / actual size on Letter paper.
+  Margins none · Headers and footers off · Background graphics on.
+  Use a photo-capable stock or coated flyer paper for the strongest dark tones.
+
+
+QR ARTWORK
+
+Final and alternate business cards use:
+  print/assets/trininails-instagram-print-qr.png
+  Clean square QR · Error correction H · Four-module quiet zone
+  Destination: https://www.instagram.com/trininails.studio/
+
+Flyers use:
+  print/assets/trininails-instagram-profile-qr.png
+  Instagram's branded profile QR
+
+Scan-test one physical proof with the Instagram app or a phone camera before
+approving the complete print run.

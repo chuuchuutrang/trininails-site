@@ -4,7 +4,10 @@
 .dark-flyer-label { width:8.5in; margin:.18in 0 -.08in; color:#f5e9ef; font:25pt/1 "Italiana",Georgia,serif; font-weight:400; }
 .dark-flyer-label:first-child { margin-top:0; }
 .dark-flyer-label span { display:block; margin-bottom:.05in; color:#cba9b5; font:600 7pt/1 "Manrope",Arial,sans-serif; text-transform:uppercase; letter-spacing:.2em; }
+.dark-flyer-label.is-final { position:relative; }
+.dark-flyer-label.is-final::after { content:"Final selection · Page 3"; position:absolute; right:0; bottom:.02in; padding:.08in .12in; color:#17131a; background:#f1bfd9; border-radius:100px; font:600 7pt/1 "Manrope",Arial,sans-serif; text-transform:uppercase; letter-spacing:.12em; }
 .dark-flyer { position:relative; margin-block:0; color:var(--flyer-pearl); print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+.dark-flyer .studio-mark-inline { filter:brightness(0) invert(1); }
 
 /* Original promotional flyer geometry; cool iridescent night skin. */
 .dark-final-flyer { --ink:#fff8fc; --wine:#d6c9d6; --pink:#f4a9e3; --line:rgba(219,199,231,.27); background:radial-gradient(circle at 14% 10%,rgba(126,89,180,.19),transparent 2.9in),radial-gradient(circle at 88% 70%,rgba(73,155,218,.14),transparent 3in),linear-gradient(150deg,#030205,#0b0710 55%,#030407); }

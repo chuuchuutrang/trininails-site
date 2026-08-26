@@ -50,11 +50,15 @@ if (bookingPicker) {
   let services = [];
 
   const configureBookingDestination = (choice, service) => {
+    const baseLabel = choice.dataset.bookingLabel || choice.getAttribute("aria-label") || "Book appointment";
+    choice.dataset.bookingLabel = baseLabel;
+
     if (embeddedBookingView.matches) {
       const calUrl = new URL(service.calUrl);
       choice.dataset.calLink = calUrl.pathname.replace(/^\//, "");
       choice.dataset.calConfig = JSON.stringify({ layout: "month_view" });
       choice.setAttribute("aria-haspopup", "dialog");
+      choice.setAttribute("aria-label", baseLabel);
       choice.removeAttribute("target");
       choice.removeAttribute("rel");
       return;
@@ -65,6 +69,7 @@ if (bookingPicker) {
     choice.removeAttribute("aria-haspopup");
     choice.target = "_blank";
     choice.rel = "noreferrer";
+    choice.setAttribute("aria-label", `${baseLabel} (opens in a new tab)`);
   };
 
   const syncBookingDestinations = () => {
@@ -341,13 +346,32 @@ const lightboxPhoto = document.querySelector("#lightbox-photo");
 const lightboxImage = document.querySelector("#lightbox-image");
 const lightboxTitle = document.querySelector("#lightbox-title");
 const lightboxDescription = document.querySelector("#lightbox-description");
+const lightboxPosition = document.querySelector("[data-lightbox-position]");
+const lightboxSwipe = document.querySelector("[data-lightbox-swipe]");
+const lightboxPrevious = document.querySelector("[data-lightbox-prev]");
+const lightboxNext = document.querySelector("[data-lightbox-next]");
+const lightboxRotation = document.querySelector("[data-lightbox-rotation]");
+const lightboxRotationIcon = document.querySelector("[data-lightbox-rotation-icon]");
+const lightboxRotationLabel = document.querySelector("[data-lightbox-rotation-label]");
+const lightboxStatus = document.querySelector("[data-lightbox-status]");
 const serviceTriggers = [...document.querySelectorAll("[data-gallery-id]")];
 const heroCarousel = document.querySelector("[data-hero-carousel]");
+const heroCarouselToggle = document.querySelector("[data-hero-carousel-toggle]");
+const heroCarouselToggleIcon = document.querySelector("[data-hero-carousel-toggle-icon]");
+const heroCarouselStatus = document.querySelector("[data-hero-carousel-status]");
 
 if (galleryDialog && imageDialog && galleryGrid) {
   let galleryDataPromise;
   let galleryOpener;
   let imageOpener;
+  let lightboxItems = [];
+  let lightboxIndex = 0;
+  let lightboxTimer;
+  let lightboxPaused = false;
+  let lightboxPointerStartX;
+  let lightboxSuppressClick = false;
+  let navigatingToBooking = false;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   const loadGalleryData = () => {
     if (!galleryDataPromise) {
@@ -370,6 +394,8 @@ if (galleryDialog && imageDialog && galleryGrid) {
   };
 
   const closeImage = () => {
+    window.clearInterval(lightboxTimer);
+    lightboxTimer = undefined;
     if (imageDialog.open) imageDialog.close();
   };
 
@@ -381,6 +407,7 @@ if (galleryDialog && imageDialog && galleryGrid) {
   const showGalleryMessage = (message) => {
     const status = document.createElement("p");
     status.className = "gallery-error";
+    status.setAttribute("role", "status");
     status.textContent = message;
     galleryGrid.replaceChildren(status);
   };
@@ -392,29 +419,89 @@ if (galleryDialog && imageDialog && galleryGrid) {
 
   const getExampleImage = (gallery, example) => resolveSiteAsset(example.image || gallery.image);
 
-  const openImage = (gallery, example, opener) => {
-    imageOpener = opener;
+  const renderLightboxItem = (announce = false) => {
+    const { gallery, example } = lightboxItems[lightboxIndex];
     lightboxPhoto.dataset.panel = String(example.panel ?? 0);
     lightboxPhoto.classList.toggle("is-standalone", Boolean(example.image));
     lightboxImage.src = getExampleImage(gallery, example);
     lightboxImage.alt = example.alt;
     lightboxTitle.textContent = example.name;
     lightboxDescription.textContent = example.alt;
+    lightboxPosition.textContent = lightboxItems.length > 1
+      ? `${lightboxIndex + 1} of ${lightboxItems.length} · Swipe or use arrows`
+      : "";
+    lightboxPrevious.hidden = lightboxItems.length < 2;
+    lightboxNext.hidden = lightboxItems.length < 2;
+    if (announce && lightboxStatus) {
+      lightboxStatus.textContent = `${example.name}, image ${lightboxIndex + 1} of ${lightboxItems.length}.`;
+    }
+  };
+
+  const updateLightboxRotationControl = (announce = false) => {
+    if (!lightboxRotation) return;
+    const canRotate = lightboxItems.length > 1 && !reducedMotion.matches;
+    lightboxRotation.hidden = !canRotate;
+    lightboxRotation.setAttribute("aria-pressed", String(lightboxPaused));
+    const action = lightboxPaused ? "Resume" : "Pause";
+    lightboxRotation.setAttribute("aria-label", `${action} automatic photo rotation`);
+    if (lightboxRotationLabel) lightboxRotationLabel.textContent = `${action} slideshow`;
+    if (lightboxRotationIcon) lightboxRotationIcon.textContent = lightboxPaused ? "▶" : "Ⅱ";
+    if (announce && lightboxStatus) {
+      lightboxStatus.textContent = lightboxPaused
+        ? "Automatic photo rotation paused."
+        : "Automatic photo rotation resumed.";
+    }
+  };
+
+  const stopLightboxRotation = () => {
+    window.clearInterval(lightboxTimer);
+    lightboxTimer = undefined;
+  };
+
+  const startLightboxRotation = () => {
+    stopLightboxRotation();
+    if (lightboxPaused || lightboxItems.length < 2 || reducedMotion.matches || document.hidden || !imageDialog.open) return;
+    lightboxTimer = window.setInterval(() => {
+      lightboxIndex = (lightboxIndex + 1) % lightboxItems.length;
+      renderLightboxItem();
+    }, 5000);
+  };
+
+  const moveLightbox = (direction) => {
+    if (lightboxItems.length < 2) return;
+    lightboxIndex = (lightboxIndex + direction + lightboxItems.length) % lightboxItems.length;
+    renderLightboxItem(true);
+    startLightboxRotation();
+  };
+
+  const openImage = (gallery, example, opener, examples = [example], initialIndex = 0) => {
+    imageOpener = opener;
+    lightboxItems = examples.map((item) => ({ gallery, example: item }));
+    lightboxIndex = Math.max(0, Math.min(initialIndex, lightboxItems.length - 1));
+    lightboxPaused = false;
+    renderLightboxItem();
+    updateLightboxRotationControl();
     imageDialog.showModal();
     setDialogLock();
+    startLightboxRotation();
     document.querySelector("[data-lightbox-close]")?.focus();
   };
 
   if (heroCarousel) {
     const slides = [...heroCarousel.querySelectorAll(".hero-set-slide")];
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const heroItems = slides.map((slide) => ({
+      image: slide.dataset.full,
+      name: slide.dataset.title,
+      alt: slide.dataset.alt,
+    }));
     let activeIndex = 0;
     let carouselTimer;
+    let heroPaused = false;
     let pointerStartX;
     let suppressClick = false;
     let lastWheelTime = 0;
 
-    const updateHeroCarousel = (nextIndex) => {
+    const updateHeroCarousel = (nextIndex, announce = false) => {
       activeIndex = (nextIndex + slides.length) % slides.length;
       slides.forEach((slide, index) => {
         const offset = (index - activeIndex + slides.length) % slides.length;
@@ -426,8 +513,28 @@ if (galleryDialog && imageDialog && galleryGrid) {
       const activeSlide = slides[activeIndex];
       heroCarousel.setAttribute(
         "aria-label",
-        `Enlarge ${activeSlide.dataset.title} nail photo. Swipe left or right for another set.`,
+        `Enlarge ${activeSlide.dataset.title} nail photo. Use the arrow keys or swipe for another set.`,
       );
+      if (announce && heroCarouselStatus) {
+        heroCarouselStatus.textContent = `${activeSlide.dataset.title}, featured photo ${activeIndex + 1} of ${slides.length}.`;
+      }
+    };
+
+    const updateHeroRotationControl = (announce = false) => {
+      if (!heroCarouselToggle) return;
+      const canRotate = slides.length > 1 && !reducedMotion.matches;
+      heroCarouselToggle.hidden = !canRotate;
+      heroCarouselToggle.setAttribute("aria-pressed", String(heroPaused));
+      const action = heroPaused ? "Resume" : "Pause";
+      const label = `${action} featured nail slideshow`;
+      heroCarouselToggle.setAttribute("aria-label", label);
+      heroCarouselToggle.title = label;
+      if (heroCarouselToggleIcon) heroCarouselToggleIcon.textContent = heroPaused ? "▶" : "Ⅱ";
+      if (announce && heroCarouselStatus) {
+        heroCarouselStatus.textContent = heroPaused
+          ? "Featured nail slideshow paused."
+          : "Featured nail slideshow resumed.";
+      }
     };
 
     const stopHeroCarousel = () => {
@@ -437,14 +544,21 @@ if (galleryDialog && imageDialog && galleryGrid) {
 
     const startHeroCarousel = () => {
       stopHeroCarousel();
-      if (reducedMotion.matches || document.hidden || heroCarousel.matches(":hover, :focus")) return;
+      if (heroPaused || reducedMotion.matches || document.hidden || heroCarousel.matches(":hover, :focus")) return;
       carouselTimer = window.setInterval(() => updateHeroCarousel(activeIndex + 1), 4200);
     };
 
     const moveHeroCarousel = (direction) => {
-      updateHeroCarousel(activeIndex + direction);
+      updateHeroCarousel(activeIndex + direction, true);
       startHeroCarousel();
     };
+
+    heroCarouselToggle?.addEventListener("click", () => {
+      heroPaused = !heroPaused;
+      if (heroPaused) stopHeroCarousel();
+      else startHeroCarousel();
+      updateHeroRotationControl(true);
+    });
 
     heroCarousel.addEventListener("click", (event) => {
       if (suppressClick) {
@@ -453,11 +567,7 @@ if (galleryDialog && imageDialog && galleryGrid) {
       }
       const activeSlide = slides[activeIndex];
       stopHeroCarousel();
-      openImage({}, {
-        image: activeSlide.dataset.full,
-        name: activeSlide.dataset.title,
-        alt: activeSlide.dataset.alt,
-      }, heroCarousel);
+      openImage({}, heroItems[activeIndex], heroCarousel, heroItems, activeIndex);
     });
 
     heroCarousel.addEventListener("keydown", (event) => {
@@ -511,8 +621,12 @@ if (galleryDialog && imageDialog && galleryGrid) {
     heroCarousel.addEventListener("focus", stopHeroCarousel);
     heroCarousel.addEventListener("blur", startHeroCarousel);
     document.addEventListener("visibilitychange", startHeroCarousel);
-    reducedMotion.addEventListener?.("change", startHeroCarousel);
+    reducedMotion.addEventListener?.("change", () => {
+      updateHeroRotationControl();
+      startHeroCarousel();
+    });
     updateHeroCarousel(0);
+    updateHeroRotationControl();
     startHeroCarousel();
   }
 
@@ -520,7 +634,7 @@ if (galleryDialog && imageDialog && galleryGrid) {
     galleryTitle.textContent = gallery.title;
     galleryDescription.textContent = gallery.description;
 
-    const cards = gallery.examples.map((example) => {
+    const cards = gallery.examples.map((example, index) => {
       const card = document.createElement("button");
       card.type = "button";
       card.className = "gallery-shot";
@@ -554,7 +668,7 @@ if (galleryDialog && imageDialog && galleryGrid) {
 
       label.append(name, expand);
       card.append(crop, label);
-      card.addEventListener("click", () => openImage(gallery, example, card));
+      card.addEventListener("click", () => openImage(gallery, example, card, gallery.examples, index));
       return card;
     });
 
@@ -568,6 +682,7 @@ if (galleryDialog && imageDialog && galleryGrid) {
     galleryTitle.textContent = serviceName;
     galleryDescription.textContent = "Loading studio work…";
     showGalleryMessage("Loading examples…");
+    galleryDialog.setAttribute("aria-busy", "true");
     galleryDialog.scrollTop = 0;
     galleryGrid.scrollLeft = 0;
     galleryDialog.showModal();
@@ -583,6 +698,8 @@ if (galleryDialog && imageDialog && galleryGrid) {
       galleryDescription.textContent = "The studio gallery could not load right now.";
       showGalleryMessage("Please close this window and try again.");
       console.error(error);
+    } finally {
+      galleryDialog.removeAttribute("aria-busy");
     }
   };
 
@@ -592,6 +709,73 @@ if (galleryDialog && imageDialog && galleryGrid) {
 
   document.querySelector("[data-gallery-close]")?.addEventListener("click", closeGallery);
   document.querySelector("[data-lightbox-close]")?.addEventListener("click", closeImage);
+  lightboxPrevious?.addEventListener("click", () => moveLightbox(-1));
+  lightboxNext?.addEventListener("click", () => moveLightbox(1));
+  lightboxRotation?.addEventListener("click", () => {
+    lightboxPaused = !lightboxPaused;
+    if (lightboxPaused) stopLightboxRotation();
+    else startLightboxRotation();
+    updateLightboxRotationControl(true);
+  });
+
+  lightboxSwipe?.addEventListener("pointerdown", (event) => {
+    lightboxPointerStartX = event.clientX;
+    stopLightboxRotation();
+    try {
+      lightboxSwipe.setPointerCapture?.(event.pointerId);
+    } catch {
+      // The swipe still works if the browser declines pointer capture.
+    }
+  });
+
+  lightboxSwipe?.addEventListener("pointerup", (event) => {
+    if (lightboxPointerStartX === undefined) return;
+    const distance = event.clientX - lightboxPointerStartX;
+    lightboxPointerStartX = undefined;
+    if (Math.abs(distance) < 32) {
+      startLightboxRotation();
+      return;
+    }
+    lightboxSuppressClick = true;
+    moveLightbox(distance < 0 ? 1 : -1);
+    window.setTimeout(() => { lightboxSuppressClick = false; }, 0);
+  });
+
+  lightboxSwipe?.addEventListener("pointercancel", () => {
+    lightboxPointerStartX = undefined;
+    startLightboxRotation();
+  });
+
+  lightboxSwipe?.addEventListener("click", (event) => {
+    if (lightboxSuppressClick) event.preventDefault();
+  });
+
+  imageDialog.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+    event.preventDefault();
+    moveLightbox(event.key === "ArrowRight" ? 1 : -1);
+  });
+
+  reducedMotion.addEventListener?.("change", () => {
+    updateLightboxRotationControl();
+    startLightboxRotation();
+  });
+  document.addEventListener("visibilitychange", startLightboxRotation);
+
+  document.querySelectorAll("[data-reserve-now]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      navigatingToBooking = true;
+      closeGallery();
+      const bookingSection = document.querySelector("#book");
+      window.history.replaceState(null, "", "#book");
+      bookingSection?.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
+      window.setTimeout(() => {
+        document.querySelector("#booking-stage-title")?.focus({ preventScroll: true });
+        navigatingToBooking = false;
+      }, reducedMotion.matches ? 0 : 500);
+    });
+  });
 
   galleryDialog.addEventListener("click", (event) => {
     const bounds = galleryDialog.getBoundingClientRect();
@@ -604,14 +788,15 @@ if (galleryDialog && imageDialog && galleryGrid) {
   });
 
   imageDialog.addEventListener("close", () => {
+    stopLightboxRotation();
     setDialogLock();
-    imageOpener?.focus();
+    if (!navigatingToBooking) imageOpener?.focus();
   });
 
   galleryDialog.addEventListener("close", () => {
     closeImage();
     setDialogLock();
-    galleryOpener?.focus();
+    if (!navigatingToBooking) galleryOpener?.focus();
   });
 }
 

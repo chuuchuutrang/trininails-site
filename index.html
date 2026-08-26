@@ -20,14 +20,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Italiana&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css?v=20260822-1" />
-    <link rel="stylesheet" href="/dark/dark.css?v=20260824-1" />
-    <link rel="stylesheet" href="/toggle/toggle.css?v=20260824-1" />
-    <script src="/script.js?v=20260824-14" defer></script>
+    <link rel="stylesheet" href="/styles.css?v=20260826-1" />
+    <link rel="stylesheet" href="/dark/dark.css?v=20260825-4" />
+    <link rel="stylesheet" href="/toggle/toggle.css?v=20260825-2" />
+    <script src="/script.js?v=20260825-2" defer></script>
     <script src="/toggle/toggle.js?v=20260824-1" defer></script>
   </head>
   <body class="toggle-site" data-gallery-url="/data/gallery.json?v=20260824-1">
     <script>document.body.classList.toggle("dark-site", document.documentElement.dataset.theme === "dark");</script>
+    <a class="skip-link" href="#top">Skip to main content</a>
     <div class="noise" aria-hidden="true"></div>
     <header class="nav shell">
       <a class="wordmark" href="#top" aria-label="Trininails home">trininails<span>✦</span><small>home</small></a>
@@ -43,22 +44,22 @@
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero shell">
+    <main id="top" tabindex="-1">
+      <section class="hero shell" aria-labelledby="hero-title">
         <div class="hero-copy reveal">
           <p class="eyebrow">San Jose, California · by appointment</p>
-          <h1>Nails made for your <em>divine era.</em></h1>
+          <h1 id="hero-title">Nails made for your <em>divine era.</em></h1>
           <p class="lede">Soft glam, sculpted extensions, and tiny works of art—created one dreamy set at a time.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#book">Reserve your set <span>↗</span></a>
-            <a class="text-link" href="https://www.instagram.com/trininails.studio/" target="_blank" rel="noreferrer">See the nail diary ↗</a>
+            <a class="button primary" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="https://www.instagram.com/trininails.studio/" target="_blank" rel="noreferrer" aria-label="See the Trininails nail diary on Instagram (opens in a new tab)">See the nail diary ↗</a>
           </div>
           <div class="availability"><i></i> Now accepting new clients</div>
         </div>
         <div class="hero-art reveal">
           <span class="orbit orbit-one" aria-hidden="true"></span>
           <span class="orbit orbit-two" aria-hidden="true"></span>
-          <div class="image-frame">
+          <div class="image-frame" role="img" aria-label="Trininails Studio logo with angel wings and halo">
             <img
               class="theme-logo theme-logo-light"
               src="/assets/trininails-divine-v2.jpg"
@@ -68,7 +69,8 @@
               height="1254"
               decoding="async"
               fetchpriority="high"
-              alt="Trininails Nail Studio artwork with pink chrome lettering, angel wings, halo, and crystal heart"
+              alt=""
+              aria-hidden="true"
             />
             <img
               class="theme-logo theme-logo-dark"
@@ -78,7 +80,8 @@
               width="1168"
               height="1168"
               decoding="async"
-              alt="Trininails iridescent chrome logo with angel wings and halo on a black background"
+              alt=""
+              aria-hidden="true"
             />
           </div>
           <button
@@ -87,7 +90,8 @@
             data-hero-carousel
             aria-haspopup="dialog"
             aria-controls="image-lightbox"
-            aria-label="Enlarge Blush Bow Fantasy nail photo. Swipe left or right for another set."
+            aria-label="Enlarge Blush Bow Fantasy nail photo. Use the arrow keys or swipe for another set."
+            aria-describedby="hero-carousel-help"
           >
             <img
               class="hero-set-slide is-active"
@@ -163,6 +167,9 @@
             />
             <span class="hero-set-badge" aria-hidden="true">↗</span>
           </button>
+          <span class="sr-only" id="hero-carousel-help">This featured nail slideshow rotates automatically. Use the pause button to stop it.</span>
+          <button class="hero-carousel-toggle" type="button" data-hero-carousel-toggle aria-pressed="false" aria-label="Pause featured nail slideshow" title="Pause featured nail slideshow"><span aria-hidden="true" data-hero-carousel-toggle-icon>Ⅱ</span></button>
+          <span class="sr-only" role="status" aria-live="polite" data-hero-carousel-status></span>
           <span class="sparkle s1" aria-hidden="true">✦</span>
           <span class="sparkle s2" aria-hidden="true">✧</span>
           <span class="sparkle s3" aria-hidden="true">✦</span>
@@ -170,13 +177,13 @@
       </section>
 
       <section class="marquee" aria-label="Studio specialties">
-        <div>GEL X ✦ BUILDER GEL ✦ FRENCH TIPS ✦ CUSTOM ART ✦ GEL X ✦ BUILDER GEL ✦ FRENCH TIPS ✦ CUSTOM ART ✦</div>
+        <div>GEL X ✦ BUILDER GEL ✦ FRENCH TIPS ✦ CUSTOM ART</div>
       </section>
 
-      <section class="services shell" id="services">
+      <section class="services shell" id="services" aria-labelledby="services-title">
         <div class="section-intro reveal">
           <p class="eyebrow">The service menu</p>
-          <h2>Your vision,<br /><em>perfectly polished.</em></h2>
+          <h2 id="services-title">Your vision,<br /><em>perfectly polished.</em></h2>
           <p>Pick the foundation for your next set. You’ll choose a weekday or weekend appointment before booking.</p>
           <figure class="services-feature">
             <img
@@ -213,14 +220,16 @@
             <span class="service-copy"><span class="service-name">Custom Nail Art</span><span class="service-summary">Add the detailed design you’ve been dreaming of.</span><span class="sr-only">View examples</span></span>
             <span class="service-preview" aria-hidden="true"><img src="/assets/gallery/thumbs/custom-nail-art-thumb.webp?v=20260820-1" alt="" width="240" height="300" loading="lazy" decoding="async" /><i>↗</i></span>
           </button>
+          <a class="button primary service-list-reserve" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
-      <section class="price-menu shell" id="pricing">
+      <section class="price-menu shell" id="pricing" aria-labelledby="pricing-title">
         <div class="price-heading reveal">
           <p class="eyebrow">The price list</p>
-          <h2>Pick your<br /><em>perfect set.</em></h2>
+          <h2 id="pricing-title">Pick your<br /><em>perfect set.</em></h2>
           <p>Simple starting prices. Custom details and final pricing can be confirmed before your appointment.</p>
+          <a class="button primary price-list-reserve" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
         </div>
         <div class="price-card reveal">
           <!-- PRICES:START -->
@@ -248,14 +257,14 @@
         </div>
       </section>
 
-      <section class="booking-wrap" id="book">
+      <section class="booking-wrap" id="book" aria-labelledby="booking-title">
         <div class="booking shell reveal">
           <div class="booking-copy">
             <p class="eyebrow">Make a reservation</p>
-            <h2>Book an<br /><em>appointment.</em></h2>
+            <h2 id="booking-title">Book an<br /><em>appointment.</em></h2>
             <p>Start with your service family. We’ll show only the choices needed for your appointment.</p>
           </div>
-          <nav class="booking-card booking-picker" aria-label="Book a service" data-booking-picker>
+          <div class="booking-card booking-picker" role="region" aria-labelledby="booking-title" data-booking-picker>
             <!-- BOOKINGS:START -->
             <div class="booking-flow" data-booking-flow>
               <div class="booking-flow-head">
@@ -281,25 +290,31 @@
               </div>
               <span class="sr-only" data-booking-config-status>All booking links are configured.</span>
               <script type="application/json" data-booking-services>[{"id":"natural-single-color","family":"natural","finish":"single-color","durationMinutes":45,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-single-color-45-min","order":1},{"id":"natural-french","family":"natural","finish":"french","durationMinutes":60,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-french-60-min","order":2},{"id":"natural-design","family":"natural","finish":"design","durationMinutes":95,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-design-95-min","order":3},{"id":"builder-natural-single-color","family":"builder","finish":"single-color","durationMinutes":60,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-natural-single-color-60-min","order":10,"length":"natural"},{"id":"builder-natural-french","family":"builder","finish":"french","durationMinutes":90,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-natural-french-90-min","order":11,"length":"natural"},{"id":"builder-natural-design","family":"builder","finish":"design","durationMinutes":105,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-natural-design-105-min","order":12,"length":"natural"},{"id":"builder-short-single-color","family":"builder","finish":"single-color","durationMinutes":75,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-short-single-color-75-min","order":13,"length":"short"},{"id":"builder-short-french","family":"builder","finish":"french","durationMinutes":105,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-short-french-105-min","order":14,"length":"short"},{"id":"builder-short-design","family":"builder","finish":"design","durationMinutes":110,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-short-design-110-min","order":15,"length":"short"},{"id":"builder-medium-single-color","family":"builder","finish":"single-color","durationMinutes":90,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-medium-single-color-90-min","order":16,"length":"medium"},{"id":"builder-medium-french","family":"builder","finish":"french","durationMinutes":105,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-medium-french-105-min","order":17,"length":"medium"},{"id":"builder-medium-design","family":"builder","finish":"design","durationMinutes":115,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-medium-design-115-min","order":18,"length":"medium"},{"id":"builder-long-single-color","family":"builder","finish":"single-color","durationMinutes":120,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-long-single-color-120-min","order":19,"length":"long"},{"id":"builder-long-french","family":"builder","finish":"french","durationMinutes":120,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-long-french-120-min","order":20,"length":"long"},{"id":"builder-long-design","family":"builder","finish":"design","durationMinutes":120,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-long-design-120-min","order":21,"length":"long"},{"id":"gel-x-natural-french","family":"gel-x","finish":"french","durationMinutes":80,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-natural-french-80-min","order":30,"length":"natural"},{"id":"gel-x-short-single-color","family":"gel-x","finish":"single-color","durationMinutes":65,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-short-single-color-65-min","order":31,"length":"short"},{"id":"gel-x-short-french","family":"gel-x","finish":"french","durationMinutes":95,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-short-french-95-min","order":32,"length":"short"},{"id":"gel-x-short-design","family":"gel-x","finish":"design","durationMinutes":95,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-short-design-95-min","order":33,"length":"short"},{"id":"gel-x-medium-single-color","family":"gel-x","finish":"single-color","durationMinutes":80,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-medium-single-color-80-min","order":34,"length":"medium"},{"id":"gel-x-medium-french","family":"gel-x","finish":"french","durationMinutes":95,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-medium-french-95-min","order":35,"length":"medium"},{"id":"gel-x-medium-design","family":"gel-x","finish":"design","durationMinutes":80,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-medium-design-80-min","order":36,"length":"medium"},{"id":"gel-x-long-single-color","family":"gel-x","finish":"single-color","durationMinutes":110,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-long-single-color-110-min","order":37,"length":"long"},{"id":"gel-x-long-french","family":"gel-x","finish":"french","durationMinutes":110,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-long-french-110-min","order":38,"length":"long"},{"id":"gel-x-long-design","family":"gel-x","finish":"design","durationMinutes":110,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/gel-x-long-design-110-min","order":39,"length":"long"},{"id":"refill-natural-single-color","family":"natural-refill","finish":"single-color","durationMinutes":90,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-refill-single-color-90-min","order":40},{"id":"refill-natural-french","family":"natural-refill","finish":"french","durationMinutes":120,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-refill-french-120-min","order":41},{"id":"refill-natural-design","family":"natural-refill","finish":"design","durationMinutes":120,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/natural-nails-refill-design-120-min","order":42},{"id":"refill-builder-short-design","family":"builder-refill","finish":"design","durationMinutes":125,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-gel-refill-short-design-125-min","order":43,"length":"short"},{"id":"refill-builder-medium-design","family":"builder-refill","finish":"design","durationMinutes":125,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-gel-refill-medium-design-125-min","order":44,"length":"medium"},{"id":"refill-builder-long-design","family":"builder-refill","finish":"design","durationMinutes":125,"calUrl":"https://cal.com/trinity-nguyen-gatp2z/builder-gel-refill-long-design-125-min","order":45,"length":"long"}]</script>
-              <noscript><p class="booking-noscript">JavaScript is required for the guided booking picker. You can still text <a href="sms:+14088887711">(408) 888-7711</a> to book.</p></noscript>
+              <noscript><p class="booking-noscript">JavaScript is required for the guided booking picker. You can still message <a href="https://www.instagram.com/trininails.studio/">@trininails.studio</a> to book.</p></noscript>
             </div>
             <!-- BOOKINGS:END -->
-            <p class="fine-print">Booking opens securely on <a href="https://cal.com" target="_blank" rel="noreferrer">Cal.com</a></p>
-          </nav>
+            <p class="fine-print">Booking opens securely on <a href="https://cal.com" target="_blank" rel="noreferrer" aria-label="Cal.com (opens in a new tab)">Cal.com</a></p>
+            <div class="booking-assist">
+              <span>Need help booking? Text the studio</span>
+              <img class="studio-mark" src="/assets/studio-mark.png" width="1600" height="240" loading="lazy" decoding="async" alt="Studio text contact displayed as an image" />
+              <span>or <a href="https://www.instagram.com/trininails.studio/" target="_blank" rel="noreferrer" aria-label="DM Trininails Studio on Instagram (opens in a new tab)">DM on Instagram ↗</a></span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="studio shell" id="studio">
+      <section class="studio shell" id="studio" aria-labelledby="studio-title">
         <div class="studio-card reveal">
           <span class="giant-star" aria-hidden="true">✦</span>
           <p class="eyebrow">The studio</p>
-          <h2>A private little<br /><em>beauty ritual.</em></h2>
+          <h2 id="studio-title">A private little<br /><em>beauty ritual.</em></h2>
           <p>Independent nail artist in San Jose, creating detail-led sets in a calm, one-on-one space.</p>
+          <a class="button studio-reserve" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
           <div class="contact-grid">
-            <a href="tel:+14088887711"><small>Phone</small><strong>408 888 7711</strong></a>
+            <div><small>Text</small><img class="studio-mark" src="/assets/studio-mark.png" width="1600" height="240" loading="lazy" decoding="async" alt="Studio text contact displayed as an image" /><span class="sr-only">If you cannot read the phone number image, use the Instagram link for booking assistance.</span></div>
             <div><small>Location</small><strong>San Jose, CA 95111</strong></div>
-            <a href="https://www.instagram.com/trininails.studio/" target="_blank" rel="noreferrer"><small>Instagram</small><strong>@trininails.studio ↗</strong></a>
-            <a href="https://www.facebook.com/people/TrininailsStudio/100068891403320/" target="_blank" rel="noreferrer"><small>Facebook</small><strong>TrininailsStudio ↗</strong></a>
+            <a href="https://www.instagram.com/trininails.studio/" target="_blank" rel="noreferrer" aria-label="Trininails Studio on Instagram (opens in a new tab)"><small>Instagram</small><strong>@trininails.studio ↗</strong></a>
+            <a href="https://www.facebook.com/people/TrininailsStudio/100068891403320/" target="_blank" rel="noreferrer" aria-label="Trininails Studio on Facebook (opens in a new tab)"><small>Facebook</small><strong>TrininailsStudio ↗</strong></a>
           </div>
         </div>
       </section>
@@ -312,7 +327,8 @@
           <p class="eyebrow">Studio portfolio</p>
           <h2 id="gallery-title">Nail portfolio</h2>
           <p id="gallery-description"></p>
-          <p class="gallery-guidance">Click to enlarge.</p>
+          <p class="gallery-guidance">Select a photo to enlarge.</p>
+          <a class="button primary gallery-reserve" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
         </header>
         <div class="gallery-grid" id="gallery-grid"></div>
         <p class="gallery-note">Trininails portfolio · every set is made uniquely for you.</p>
@@ -321,13 +337,19 @@
 
     <dialog class="image-dialog" id="image-lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description">
       <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close expanded image"><span aria-hidden="true">×</span></button>
+      <button class="lightbox-nav lightbox-prev" type="button" data-lightbox-prev aria-label="Previous nail photo"><span aria-hidden="true">‹</span></button>
       <figure>
-        <div class="lightbox-photo" id="lightbox-photo"><img id="lightbox-image" src="" alt="" /></div>
+        <div class="lightbox-photo" id="lightbox-photo" data-lightbox-swipe><img id="lightbox-image" src="" alt="" /></div>
         <figcaption>
           <span class="lightbox-title" id="lightbox-title"></span>
           <span class="lightbox-description" id="lightbox-description"></span>
+          <span class="lightbox-position" data-lightbox-position></span>
+          <button class="lightbox-rotation" type="button" data-lightbox-rotation aria-pressed="false" aria-label="Pause automatic photo rotation" hidden><span aria-hidden="true" data-lightbox-rotation-icon>Ⅱ</span><span data-lightbox-rotation-label>Pause slideshow</span></button>
+          <span class="sr-only" role="status" aria-live="polite" data-lightbox-status></span>
+          <a class="button lightbox-reserve" href="#book" data-reserve-now>Reserve now <span aria-hidden="true">↗</span></a>
         </figcaption>
       </figure>
+      <button class="lightbox-nav lightbox-next" type="button" data-lightbox-next aria-label="Next nail photo"><span aria-hidden="true">›</span></button>
     </dialog>
 
     <footer class="shell">

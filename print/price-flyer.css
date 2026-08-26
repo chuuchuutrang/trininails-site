@@ -16,8 +16,11 @@
 .dream-starting .starting-value { margin-top:.025in; font-size:15pt; letter-spacing:.04em; }
 .dream-flourish { position:absolute; bottom:.01in; left:50%; width:2.7in; color:#c47f94; font-size:7pt; text-align:center; letter-spacing:.09em; transform:translateX(-50%); }
 .dream-contact { position:relative; display:flex; min-height:.9in; flex-direction:column; justify-content:center; gap:.045in; margin:.01in 0 .1in; padding-right:1.02in; font-size:7.5pt; font-weight:600; text-transform:uppercase; letter-spacing:.07em; }
-.dream-contact span { display:flex; align-items:center; gap:.065in; }
+.dream-contact > span { display:grid; min-width:0; min-height:.22in; grid-template-columns:.22in .34in minmax(0,1fr); align-items:center; gap:.065in; }
 .dream-contact b { display:grid; width:.22in; height:.22in; place-items:center; color:#fff; background:#c56f88; border-radius:50%; font-size:7pt; }
+.dream-contact strong { font:inherit; font-weight:700; letter-spacing:.07em; }
+.dream-contact a,.dream-contact-value { min-width:0; color:inherit; font-size:inherit; font-weight:600; letter-spacing:.025em; white-space:nowrap; }
+.dream-contact .studio-mark-inline { display:block; width:auto; height:1.45em; max-width:1.04in; margin:0 0 0 -.148in; object-fit:contain; object-position:left center; }
 .dream-contact .text-globe { font-family:"Apple Symbols","Segoe UI Symbol","Noto Sans Symbols 2",sans-serif; font-size:8pt; font-style:normal; }
 .dream-price-title { display:grid; height:.48in; place-items:center; color:#fff8f3; background:linear-gradient(135deg,#c8617d,#a84765); border-radius:99px; font:600 15pt/1 "Manrope",sans-serif; letter-spacing:.12em; }
 .dream-price-list { display:flex; flex-direction:column; gap:.1in; margin-top:.11in; }

@@ -6,8 +6,9 @@
     <meta name="description" content="Three professional business-card concepts for Trininails Studio, including a light-and-dark hybrid." />
     <meta name="robots" content="noindex, nofollow" />
     <title>Trininails Studio — Dark Business Card Concepts</title>
-    <link rel="stylesheet" href="print.css?v=20260821-47" />
-    <link rel="stylesheet" href="dark-business-cards.css?v=20260824-3" />
+    <link rel="stylesheet" href="print.css?v=20260826-1" />
+    <link rel="stylesheet" href="dark-business-cards.css?v=20260826-7" />
+    <script>if (new URLSearchParams(location.search).get("card") === "no-logo") document.documentElement.classList.add("card-no-logo");</script>
     <style>@page { size: 3.75in 2.25in; margin: 0; }</style>
   </head>
   <body class="print-document dark-card-document">
@@ -16,20 +17,22 @@
       <span>Three concepts · front + back · 3.5 × 2 in trim · 0.125 in bleed</span>
       <a href="../artifacts/trininails-dark-card-midnight-aura.pdf" target="_blank" rel="noopener">Aura PDF</a>
       <a href="../artifacts/trininails-dark-card-rose-nocturne.pdf" target="_blank" rel="noopener">Nocturne PDF</a>
+      <a href="../artifacts/trininails-final-business-card.pdf" target="_blank" rel="noopener">Final pairing PDF</a>
+      <a href="../artifacts/trininails-final-business-card-no-logo.pdf" target="_blank" rel="noopener">No-logo final PDF</a>
       <button type="button" onclick="window.print()">Print all concepts</button>
     </nav>
 
     <main class="dark-card-pages">
       <h1 class="dark-concept-label"><span>Concept 01</span> Midnight Aura</h1>
 
-      <section class="dark-card aura-front" aria-label="Midnight Aura business card front with bleed">
+      <section class="dark-card aura-front is-final-selection" id="final-card-front" aria-label="Final Midnight Aura business card front with bleed, page 1">
+        <span class="final-selection-badge">Final front · Page 1</span>
         <div class="aura-logo">
           <img src="assets/trininails-dark-iridescent-logo.jpg" width="1168" height="1168" alt="Trininails iridescent winged logo" />
         </div>
         <div class="aura-front-copy">
-          <p class="dark-kicker">San Jose<br />nail artist</p>
+          <p class="dark-kicker">San Jose<br />nail artist<br /><span>By appointment</span></p>
           <p class="dark-tagline"><span>Nails made</span><span>for your</span><em>divine era.</em></p>
-          <span class="dark-star" aria-hidden="true">✦</span>
           <p class="dark-domain">trininails.studio</p>
         </div>
       </section>
@@ -40,7 +43,7 @@
           <h2>Styles +<br /><em>booking.</em></h2>
           <p class="dark-services">Gel-X · Builder Gel · French Tips · Custom Art</p>
           <div class="dark-contact-line">
-            <span>Text 408-888-7711</span>
+            <span>Text <img class="studio-mark-inline" src="../assets/studio-mark.png" width="1600" height="240" alt="Studio text contact displayed as an image" /></span>
             <span>@trininails.studio</span>
           </div>
         </div>
@@ -74,7 +77,7 @@
           <h2>Book your<br /><em>next set.</em></h2>
           <p class="dark-services">Natural · Builder · Gel-X · Custom Art</p>
           <div class="nocturne-contact">
-            <span>408-888-7711</span>
+            <span><img class="studio-mark-inline" src="../assets/studio-mark.png" width="1600" height="240" alt="Studio text contact displayed as an image" /></span>
             <span>@trininails.studio</span>
             <span>trininails.studio</span>
           </div>
@@ -98,25 +101,24 @@
         </div>
       </section>
 
-      <section class="dark-card contrast-back" aria-label="Divine Contrast light business card back with nail photo and Instagram QR code">
+      <section class="dark-card contrast-back is-final-selection" id="final-card-back" aria-label="Final Divine Contrast light business card back with nail photo and Instagram QR code, page 6">
+        <span class="final-selection-badge">Final back · Page 6</span>
         <figure class="contrast-photo">
           <img src="assets/blush-bow-fantasy-print.jpg" width="1728" height="2160" alt="Pink bow and ribbon nail art by Trininails Studio" />
         </figure>
+        <img class="contrast-watermark" src="../assets/trininails-logo-transparent.png" width="500" height="500" alt="" aria-hidden="true" />
         <div class="contrast-back-copy">
-          <p class="contrast-kicker">See the newest sets</p>
+          <p class="contrast-kicker">Portfolio + booking</p>
           <h2>Follow the<br /><em>nail diary.</em></h2>
-          <a class="contrast-instagram" href="https://www.instagram.com/trininails.studio/" aria-label="Open @trininails.studio on Instagram">
-            <svg class="instagram-mark" viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-              <circle cx="12" cy="12" r="4.2"></circle>
-              <circle class="instagram-dot" cx="17.5" cy="6.7" r="1"></circle>
-            </svg>
-            <strong>@trininails.studio</strong>
-          </a>
-          <p class="contrast-meta">Nail art · booking · new sets</p>
+        </div>
+        <div class="contrast-contact" aria-label="Studio contact information">
+          <div><i aria-hidden="true">♡</i><strong>Text</strong><span><img class="studio-mark-inline" src="../assets/studio-mark.png" width="1600" height="240" alt="Studio text contact displayed as an image" /></span></div>
+          <div><i aria-hidden="true">@</i><strong>DM</strong><a href="https://www.instagram.com/trininails.studio/">@trininails.studio</a></div>
+          <div><i aria-hidden="true">◎</i><strong>Web</strong><a href="https://trininails.studio">trininails.studio</a></div>
         </div>
         <a class="contrast-qr" href="https://www.instagram.com/trininails.studio/" aria-label="Scan to open Trininails Studio on Instagram">
-          <img src="assets/trininails-instagram-profile-qr.png" width="465" height="551" alt="QR code linking to @trininails.studio on Instagram" />
+          <img src="assets/trininails-instagram-print-qr.png" width="564" height="564" alt="QR code linking to @trininails.studio on Instagram" />
+          <span>@trininails.studio</span>
         </a>
       </section>
     </main>

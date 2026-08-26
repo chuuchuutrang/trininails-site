@@ -11,7 +11,7 @@ html[data-theme="light"] {
 .toggle-site:not(.dark-site) {
   --ink: #412a32;
   --wine: #744a58;
-  --pink: #c88f9f;
+  --pink: #9b5369;
   --blush: #ead4da;
   --cream: #faf6f3;
   --paper: #f3e8e9;
@@ -54,7 +54,7 @@ html[data-theme="light"] {
   position: relative;
   display: grid;
   width: 44px;
-  height: 30px;
+  height: 44px;
   flex: 0 0 auto;
   place-items: center;
   padding: 0;
@@ -157,13 +157,14 @@ html[data-theme="light"] {
   }
 
   .theme-toggle {
-    width: 34px;
-    height: 28px;
+    width: 44px;
+    height: 44px;
   }
 
   .toggle-site .nav-cta {
-    padding: 8px 9px;
-    font-size: 8px;
+    min-height: 44px;
+    padding: 8px 11px;
+    font-size: 9px;
     letter-spacing: 0.08em;
   }
 

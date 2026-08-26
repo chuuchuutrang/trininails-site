@@ -42,6 +42,26 @@
   letter-spacing: 0.2em;
 }
 
+.dark-card.is-final-selection {
+  outline: 3px solid #f1bfd9;
+  outline-offset: 5px;
+}
+
+.final-selection-badge {
+  position: absolute;
+  z-index: 20;
+  top: 0.12in;
+  right: 0.12in;
+  padding: 0.065in 0.09in;
+  color: #17131a;
+  background: #f1bfd9;
+  border-radius: 100px;
+  box-shadow: 0 0.05in 0.14in rgba(0, 0, 0, 0.24);
+  font: 600 5.8pt/1 "Manrope", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
 .dark-card {
   position: relative;
   width: 3.75in;
@@ -185,16 +205,8 @@
   color: var(--aurora-pink);
 }
 
-.dark-star {
-  display: block;
-  margin: 0.12in 0 0.08in;
-  color: #cae4ff;
-  font-size: 8pt;
-  text-shadow: 0 0 0.08in #bb8cf6;
-}
-
 .dark-domain {
-  margin: 0;
+  margin: 0.12in 0 0;
   color: #e9dff1;
   font-size: 5.7pt;
   font-weight: 600;
@@ -525,15 +537,6 @@
     linear-gradient(112deg, #fffdfa, #f7edef 76%, #f3e3e8);
 }
 
-.contrast-back::before {
-  content: "✦";
-  position: absolute;
-  right: 0.17in;
-  bottom: 0.09in;
-  color: rgba(180, 113, 139, 0.22);
-  font-size: 18pt;
-}
-
 .contrast-back::after {
   border-color: rgba(123, 73, 92, 0.25);
 }
@@ -559,17 +562,41 @@
   object-position: 52% 52%;
 }
 
+.contrast-watermark {
+  position: absolute;
+  z-index: 5;
+  right: 0.125in;
+  bottom: 0.18in;
+  width: 0.81in;
+  height: 0.81in;
+  object-fit: contain;
+  opacity: 1;
+}
+
+.card-no-logo .contrast-watermark {
+  display: none;
+}
+
+.card-no-logo .contrast-contact {
+  right: 0.34in;
+  left: 1.69in;
+}
+
 .contrast-back-copy {
   position: absolute;
   z-index: 3;
-  top: 0.27in;
-  left: 1.62in;
-  width: 1.13in;
+  top: 0.23in;
+  left: 1.5in;
+  display: flex;
+  width: 1.05in;
+  height: 1.02in;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .contrast-kicker,
-.contrast-meta,
-.contrast-instagram {
+.contrast-contact {
   font-family: "Manrope", Arial, sans-serif;
 }
 
@@ -585,65 +612,93 @@
 }
 
 .contrast-back-copy h2 {
-  margin: 0.09in 0 0.12in;
+  margin: 0.1in 0 0;
   color: #432d35;
-  font: 16.5pt/0.87 "Italiana", Georgia, serif;
+  font: 17.2pt/0.92 "Italiana", Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
 }
 
 .contrast-back-copy h2 em {
   color: #b16e86;
 }
 
-.contrast-instagram {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.055in;
-  color: #65404d;
-}
-
-.instagram-mark {
-  width: 0.18in;
-  height: 0.18in;
-  overflow: visible;
-  fill: none;
-  stroke: #b05e7c;
-  stroke-width: 1.65;
-}
-
-.instagram-mark .instagram-dot {
-  fill: #b05e7c;
-  stroke: none;
-}
-
-.contrast-instagram strong {
-  font-size: 5.55pt;
-  font-weight: 750;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-}
-
-.contrast-meta {
-  margin: 0.1in 0 0;
-  color: #8b6673;
-  font-size: 4.75pt;
-  font-weight: 650;
-  line-height: 1.25;
+.contrast-contact {
+  position: absolute;
+  z-index: 4;
+  right: 0.74in;
+  bottom: 0.24in;
+  left: 1.62in;
+  display: grid;
+  gap: 0.012in;
+  padding-top: 0.07in;
+  border-top: 0.45pt solid rgba(123, 73, 92, 0.22);
+  color: #513642;
+  font-size: 5.2pt;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.035em;
+}
+
+.contrast-contact > div {
+  display: grid;
+  min-width: 0;
+  min-height: 0.18in;
+  grid-template-columns: 0.18in 0.3in minmax(0, 1fr);
+  align-items: center;
+  gap: 0.04in;
+  line-height: 1;
+}
+
+.contrast-contact i {
+  display: grid;
+  width: 0.17in;
+  height: 0.17in;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(145deg, #9a6cc6, #4e5f9e);
+  border-radius: 50%;
+  font: normal 5.2pt/1 Georgia, serif;
+}
+
+.contrast-contact strong {
+  font-size: inherit;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+}
+
+.contrast-contact span,
+.contrast-contact a {
+  min-width: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: 750;
+  letter-spacing: 0.005em;
   white-space: nowrap;
+}
+
+.contrast-contact .studio-mark-inline {
+  display: block;
+  width: auto;
+  height: 1.48em;
+  max-width: none;
+  margin-left: -0.105in;
+  filter: none;
 }
 
 .contrast-qr {
   position: absolute;
   z-index: 4;
   right: 0.25in;
-  bottom: 0.26in;
-  width: 0.67in;
+  top: 0.23in;
+  display: grid;
+  width: 0.9in;
+  gap: 0.008in;
+  padding: 0.01in;
   overflow: hidden;
   border: 0.65pt solid rgba(151, 92, 114, 0.4);
   border-radius: 0.055in;
+  background: #fff;
   box-shadow: 0 0.05in 0.12in rgba(109, 61, 79, 0.12);
 }
 
@@ -651,6 +706,15 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.contrast-qr span {
+  color: #35232a;
+  font: 750 4.8pt/1 "Manrope", Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
 }
 
 @media print {
@@ -669,6 +733,14 @@
   }
 
   .dark-concept-label {
+    display: none;
+  }
+
+  .dark-card.is-final-selection {
+    outline: 0;
+  }
+
+  .final-selection-badge {
     display: none;
   }
 
@@ -691,4 +763,12 @@
   .dark-card-pages {
     transform-origin: top center;
   }
+}
+
+.dark-card .studio-mark-inline {
+  filter: brightness(0) invert(1);
+}
+
+.dark-card.contrast-back .studio-mark-inline {
+  filter: none;
 }

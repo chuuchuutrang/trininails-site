@@ -6,13 +6,14 @@
     <meta name="description" content="Dark promotional and price flyer concepts for Trininails Studio." />
     <meta name="robots" content="noindex, nofollow" />
     <title>Trininails Studio — Dark Flyer Concepts</title>
-    <link rel="stylesheet" href="price-flyer.css?v=20260824-1" />
-    <link rel="stylesheet" href="dark-flyers.css?v=20260824-2" />
+    <link rel="stylesheet" href="price-flyer.css?v=20260826-3" />
+    <link rel="stylesheet" href="dark-flyers.css?v=20260826-1" />
   </head>
   <body class="print-document dark-flyer-document">
     <nav class="screen-toolbar" aria-label="Print preview controls">
       <a href="index.html">Print studio</a>
       <span>Two dark styles × two flyer layouts · US Letter</span>
+      <a href="../artifacts/trininails-final-dark-price-flyer.pdf" target="_blank" rel="noopener">Final page 3 PDF</a>
       <button type="button" onclick="window.print()">Print all four</button>
     </nav>
 
@@ -73,7 +74,7 @@
         <div class="dream-columns">
           <section class="dream-left">
             <div class="dream-brand"><img src="assets/trininails-dark-rose-logo.png" width="1168" height="1168" alt="Trininails rose-chrome winged logo" /><div class="dream-flourish">✦ ───── ♡ ───── ✦</div></div>
-            <div class="dream-contact"><span><b>♡</b> Text 408-888-7711</span><span><b>✦</b> DM <a href="https://www.instagram.com/trininails.studio/">@trininails.studio</a></span><span><b class="text-globe">&#x1F310;&#xFE0E;</b> <a href="https://trininails.studio">Web trininails.studio</a></span><div class="dream-starting"><span>Sets</span><span>From</span><span class="starting-value">$40</span></div></div>
+            <div class="dream-contact"><span><b>♡</b><strong>Text</strong><span class="dream-contact-value"><img class="studio-mark-inline" src="../assets/studio-mark.png" width="1600" height="240" alt="Studio text contact displayed as an image" /></span></span><span><b>✦</b><strong>DM</strong><a href="https://www.instagram.com/trininails.studio/">@trininails.studio</a></span><span><b class="text-globe">&#x1F310;&#xFE0E;</b><strong>Web</strong><a href="https://trininails.studio">trininails.studio</a></span><div class="dream-starting"><span>Sets</span><span>From</span><span class="starting-value">$40</span></div></div>
             <div class="dream-price-title">✦ PRICE LIST ✦</div>
             <section class="dream-price-list" aria-label="Services and starting prices">
               <div class="print-price-group"><h3><span>✦</span> Basic Nail Art <span>✦</span></h3><div class="print-price-row"><span>Single Color Design</span><i></i><strong>$40</strong></div><div class="print-price-row"><span>French Tips</span><i></i><strong>$45</strong></div></div>
@@ -104,9 +105,9 @@
       (() => {
         const pages = document.querySelector(".dark-flyer-pages");
         const rosePriceLabel = document.querySelector("#rose-price-label");
-        const label = (number, title) => {
+        const label = (number, title, final = false) => {
           const heading = document.createElement("h1");
-          heading.className = "dark-flyer-label";
+          heading.className = `dark-flyer-label${final ? " is-final" : ""}`;
           heading.innerHTML = `<span>Concept ${number}</span>${title}`;
           return heading;
         };
@@ -128,7 +129,7 @@
         rosePriceLabel.before(
           label("02", "Rose Nocturne · Dark Promotional Flyer"),
           rosePromotional,
-          label("03", "Midnight Aura · Dark Price Flyer"),
+          label("03", "Midnight Aura · Dark Price Flyer", true),
           midnightPrice,
         );
       })();
