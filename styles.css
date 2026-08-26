@@ -252,3 +252,111 @@ footer { display:grid; grid-template-columns:1fr auto 1fr; padding-block:30px 50
   .service-trigger:focus-visible,.booking-choice:focus-visible,.gallery-shot:focus-visible { outline:3px solid Highlight; }
   .availability i { forced-color-adjust:none; background:CanvasText; }
 }
+
+/* Expanded carousel: reserve space for captions and controls at every viewport. */
+body.dialog-open {
+  /* Fullscreen dialogs already size themselves to the viewport. Prevent the
+     large-monitor site zoom from making them larger than that viewport. */
+  --desktop-scale: 1 !important;
+}
+
+.image-dialog[open] {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100dvh;
+  min-height: 0;
+  max-height: 100dvh;
+  place-items: stretch;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.image-dialog figure {
+  width: 100%;
+  height: 100%;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: clamp(8px, 1.5svh, 14px);
+}
+
+.lightbox-photo {
+  width: auto;
+  max-width: min(90vw, 540px);
+  height: 100%;
+  max-height: 100%;
+}
+
+.lightbox-photo.is-standalone {
+  width: fit-content;
+  max-width: min(calc(100vw - 32px), 960px);
+  height: min(100%, calc(125vw - 40px), 1200px);
+  max-height: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.lightbox-photo.is-standalone img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-dialog figcaption {
+  width: min(90vw, 680px);
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    "title title title"
+    "description description description"
+    "position rotation reserve";
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+
+.lightbox-title { grid-area: title; }
+.lightbox-description { grid-area: description; }
+.lightbox-position { grid-area: position; text-align: left; }
+.lightbox-rotation { grid-area: rotation; }
+.lightbox-reserve { grid-area: reserve; margin-top: 0; }
+
+@media (max-width: 700px) {
+  .image-dialog {
+    padding:
+      calc(env(safe-area-inset-top) + 12px)
+      calc(env(safe-area-inset-right) + 12px)
+      calc(env(safe-area-inset-bottom) + 12px)
+      calc(env(safe-area-inset-left) + 12px);
+  }
+
+  .image-dialog figure {
+    grid-template-rows: minmax(0, auto) auto;
+    align-content: center;
+    gap: 8px;
+  }
+
+  .image-dialog figcaption {
+    width: min(100%, 560px);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title title"
+      "description description"
+      "position position"
+      "rotation reserve";
+    column-gap: 8px;
+    row-gap: 4px;
+  }
+
+  .lightbox-photo { max-width: calc(100vw - 28px); }
+  .lightbox-title { font-size: 18px; }
+  .lightbox-description { font-size: 11px; line-height: 1.35; }
+  .lightbox-position { justify-self: center; text-align: center; }
+  .lightbox-rotation,
+  .lightbox-reserve { min-height: 42px; padding: 9px 13px; }
+
+  .lightbox-nav {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
