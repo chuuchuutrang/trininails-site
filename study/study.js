@@ -16,7 +16,7 @@
     'A practical field guide · 21 study ideas + 6 reminders + 4 core habits': 'Cẩm nang thực hành · 21 phương pháp học + 6 lời nhắc + 4 thói quen cốt lõi',
     'Study': 'Học',
     'smarter.': 'hiệu quả hơn.',
-    'A personal guide from Bitchley on how to study like a lazy person—less busywork, better memory, and proof you actually learned it.': 'Cẩm nang cá nhân của Bitchley về cách học theo kiểu “lười mà hiệu quả” — bớt những việc tốn công vô ích, nhớ lâu hơn và có cách kiểm chứng rằng bạn đã thực sự nắm bài.',
+    'A practical guide to studying efficiently—less busywork, better memory, and clear proof that you actually learned the material.': 'Cẩm nang thực tế giúp bạn học hiệu quả hơn—bớt những việc tốn công vô ích, nhớ lâu hơn và có cách rõ ràng để kiểm chứng rằng bạn đã thực sự nắm bài.',
     'The main rule': 'Nguyên tắc quan trọng nhất',
     'Do not measure studying by how many hours you spend. Measure it by what you can': 'Đừng đo hiệu quả học tập bằng số giờ đã bỏ ra. Hãy đo bằng việc bạn có thể',
     'explain, recall, or solve': 'giải thích, tự nhớ lại hoặc giải bài',
@@ -349,7 +349,7 @@
     languageButton.setAttribute('aria-label', vietnamese ? 'Chuyển sang tiếng Anh' : 'Đọc bằng tiếng Việt');
     languageButton.querySelector('span').textContent = vietnamese ? 'EN' : 'VI';
     languageButton.querySelector('b').textContent = vietnamese ? 'Tiếng Anh' : 'Tiếng Việt';
-    brandLink?.setAttribute('aria-label', vietnamese ? 'Quay lại Trininails' : 'Back to Trininails');
+    brandLink?.setAttribute('aria-label', vietnamese ? 'Quay lại cẩm nang kỹ năng' : 'Back to the field guide');
     videoFrame?.setAttribute('title', vietnamese ? 'Video về cách học nhanh hơn, có bật phụ đề' : 'Learning faster video with English captions enabled');
     setTheme(root.dataset.theme || 'light');
     syncExpandButton();
