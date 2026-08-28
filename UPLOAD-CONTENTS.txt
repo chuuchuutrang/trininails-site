@@ -1,12 +1,26 @@
 TRININAILS.STUDIO — DEPLOYMENT COPY
 
-Upload everything INSIDE this folder to the web host's document root.
-Do not upload the enclosing deploy-ready folder itself unless the host asks for a site folder.
+The live website is published from the public GitHub repository:
+https://github.com/chuuchuutrang/trininails-site
 
-After upload, verify:
+Use scripts/publish_site.py from the private source repository to check and
+publish deploy-ready/ safely. GitHub Pages serves the public repository, while
+Porkbun manages the trininails.studio domain and DNS.
+
+After publishing, verify:
 1. https://trininails.studio/
-2. https://trininails.studio/print/
-3. The PDF and card-preview buttons on the print page
+2. https://trininails.studio/guide/
+3. https://trininails.studio/study/
+4. https://trininails.studio/money/
+5. https://trininails.studio/manners/
+6. https://trininails.studio/print/
+7. The booking links, language toggles, print downloads, and mobile layout
 
-This folder is fully static. It does not require Node.js, Python, PHP, or a database.
-It is rebuilt by running: python3 scripts/render_all.py
+This folder is fully static. It does not require Node.js, Python, PHP, WordPress,
+or a database on the web host. Rebuild it with:
+
+python3 scripts/render_all.py
+
+Then publish it with:
+
+python3 scripts/publish_site.py --apply --commit --push --message "Publish site updates"
